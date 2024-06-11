@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -26,17 +25,21 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
 
-        // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     void Update()
     {
-        // We are grounded, so recalculate move direction based on axes
+        if (!characterController.isGrounded)
+        {
+            moveDirection.y -= gravity * Time.deltaTime;
+        }
+
+        characterController.Move(moveDirection * Time.deltaTime);
+
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
@@ -61,18 +64,13 @@ public class PlayerController : MonoBehaviour
             flashlight_player.transform.forward = playerCamera.transform.forward;
         }
 
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // as an acceleration (ms^-2)
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
 
-        // Player and Camera rotation
         if (canMove)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
@@ -90,11 +88,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ApplyExplosionForce(Vector3 direction, float force)
+    {
+        direction.y = 0.5f;
+        moveDirection = direction.normalized * force;
+    }
+
     private IEnumerator Shake(float shakeMagnitude, float shakeDuration, float shakeDelay)
     {
         isShaking = true;
 
-        // Esperar antes de comenzar la sacudida si hay un retraso
         if (shakeDelay > 0f)
         {
             yield return new WaitForSeconds(shakeDelay);

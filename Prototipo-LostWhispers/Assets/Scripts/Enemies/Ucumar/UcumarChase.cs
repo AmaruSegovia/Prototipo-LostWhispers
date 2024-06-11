@@ -171,7 +171,26 @@ public class EnemyAI : MonoBehaviour
         // Asegurarse de que el enemigo llegue exactamente a la posición del jugador
         transform.position = fallTarget;
 
+        ApplyExplosionForce();
+
     }
+
+
+    private void ApplyExplosionForce()
+    {
+        float explosionRadius = 10f;
+        float explosionForce = 200f;
+        Vector3 explosionPosition = transform.position;
+
+        float distanceToPlayer = Vector3.Distance(explosionPosition, player.position);
+
+        if (distanceToPlayer <= explosionRadius)
+        {
+            Vector3 explosionDirection = (player.position - explosionPosition).normalized;
+            playerController.ApplyExplosionForce(explosionDirection, explosionForce);
+        }
+    }
+
 
     void MoverCamaraGrito() 
     {
