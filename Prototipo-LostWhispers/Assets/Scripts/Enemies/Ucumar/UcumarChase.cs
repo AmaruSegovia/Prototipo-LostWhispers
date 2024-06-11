@@ -1,121 +1,234 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float patrolRadius = 10f; // Radio de patrullaje
-    public float patrolInterval = 10f; // Tiempo entre cambio de posiciones de patrullaje
-    public float detectionRange = 50f;
-    public float attackRange = 2f;
-    public Animator animator;
     public Transform player;
+    public float lookRadius = 50f;
+    public float coneVisionRadius = 30f; // Radio del cono de visión
+    public float attackRadius = 5f;
+    public float patrolRadius = 20f; // Radio dentro del cual el enemigo patrulla aleatoriamente
+    public float idleTime = 10f; // Tiempo que el enemigo se queda quieto
+    public float jumpHeight = 10f; // Altura del salto
+    public float visionConeAngle = 45f; // Ángulo del cono de visión
+    public float chaseSpeed = 100f; // Velocidad de persecución
 
+    private Animator animator;
     private NavMeshAgent agent;
-    private bool isChasing;
-    private bool isShouting;
-    private Vector3 patrolTarget;
-    private float patrolTimer;
+    private float idleTimer = 0f;
+    private bool isIdle = false;
+    private bool isChasing = false;
+    private PlayerController playerController;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        SetRandomPatrolTarget();
+
+        agent.speed = 8;
+        agent.acceleration = 8f;
+        agent.angularSpeed = 360f;
+        agent.stoppingDistance = attackRadius;
+
+        // Obtener referencia al script del jugador
+        playerController = player.GetComponent<PlayerController>();
+
+        // Start the first patrol
+        PatrolToRandomPoint();
+    }
+
+    void PatrolToRandomPoint()
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomDirection, out hit, patrolRadius, NavMesh.AllAreas))
+        {
+            Vector3 finalPosition = hit.position;
+            agent.SetDestination(finalPosition);
+            animator.SetBool("isWalking", true);
+            animator.SetBool("isIdle", false);
+        }
     }
 
     void Update()
     {
-        if (!isChasing && !isShouting)
+        if (isChasing)
         {
-            Patrol();
-        }
-        else if (isChasing)
-        {
-            ChasePlayer();
-        }
+            agent.SetDestination(player.position);
+            float distanceToPlayer = Vector3.Distance(player.position, transform.position);
 
-        DetectPlayer();
-    }
-
-    void Patrol()
-    {
-        patrolTimer += Time.deltaTime;
-        if (patrolTimer >= patrolInterval || agent.remainingDistance < 0.5f)
-        {
-            SetRandomPatrolTarget();
-            patrolTimer = 0f;
-        }
-
-        agent.destination = patrolTarget;
-
-        if (agent.remainingDistance > 0.5f)
-        {
-            animator.SetBool("isWalking", true);
-            animator.SetBool("isIdle", false);
+            if (distanceToPlayer <= attackRadius)
+            {
+                AttackPlayer();
+            }
+            else
+            {
+                animator.SetBool("isAttacking", false);
+                animator.SetBool("isWalking", true);
+                agent.isStopped = false;
+            }
         }
         else
         {
-            animator.SetBool("isWalking", false);
-            animator.SetBool("isIdle", true);
+            float distance = Vector3.Distance(player.position, transform.position);
+
+            // Calcular si el jugador está dentro del cono de visión
+            Vector3 directionToPlayer = (player.position - transform.position).normalized;
+            float angleToPlayer = Vector3.Angle(transform.forward, directionToPlayer);
+
+            // Revisar si el jugador está dentro del rango esférico o dentro del cono de visión
+            bool isInLookRadius = distance <= lookRadius;
+            bool isInConeVision = distance <= coneVisionRadius && angleToPlayer <= visionConeAngle / 2f;
+
+            if (isInLookRadius || isInConeVision)
+            {
+                agent.isStopped = true;
+                FacePlayer();
+                animator.SetTrigger("Shout");
+            }
+            else
+            {
+                if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    if (!isIdle)
+                    {
+                        if (Random.value > 0.5f)
+                        {
+                            isIdle = true;
+                            idleTimer = idleTime;
+                            animator.SetBool("isWalking", false);
+                            animator.SetBool("isIdle", true);
+                        }
+                        else
+                        {
+                            PatrolToRandomPoint();
+                        }
+                    }
+                }
+
+                if (isIdle)
+                {
+                    idleTimer -= Time.deltaTime;
+                    if (idleTimer <= 0f)
+                    {
+                        isIdle = false;
+                        PatrolToRandomPoint();
+                    }
+                }
+
+                if (agent.velocity.sqrMagnitude > 0f)
+                {
+                    animator.SetBool("isWalking", true);
+                    animator.SetBool("isIdle", false);
+                }
+                else
+                {
+                    animator.SetBool("isWalking", false);
+                    animator.SetBool("isIdle", true);
+                }
+            }
         }
     }
 
-    void SetRandomPatrolTarget()
+    void JumpAttack()
     {
-        Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
-        randomDirection += transform.position;
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randomDirection, out navHit, patrolRadius, -1);
-        patrolTarget = navHit.position;
-    }
-
-    void DetectPlayer()
-    {
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
-        if (distanceToPlayer <= detectionRange && !isChasing && !isShouting)
-        {
-            isShouting = true;
-            agent.isStopped = true;
-            agent.velocity = Vector3.zero;
-            LookAtPlayer(); // Asegúrate de que el enemigo mire al jugador al iniciar el grito
-            animator.SetTrigger("Shout");
-        }
-    }
-
-    void LookAtPlayer()
-    {
-        Vector3 direction = (player.position - transform.position).normalized;
-        direction.y = 0; // Mantener solo la rotación en el plano horizontal
-        transform.rotation = Quaternion.LookRotation(direction);
-    }
-
-    void JumpTowardsPlayer()
-    {
-        Vector3 jumpTarget = player.position + (transform.position - player.position).normalized * 10f; // Ajusta la distancia del salto según sea necesario
-        agent.destination = jumpTarget;
-        animator.SetBool("isRunning", true);
+        animator.SetTrigger("JumpAttack");
         animator.SetBool("isWalking", false);
-        Invoke("StartChasing", 3f); // Ajusta el tiempo para que coincida con la animación de salto
+        animator.SetBool("isIdle", false);
+        StartCoroutine(ExecuteJumpAttack());
     }
+
+    private IEnumerator ExecuteJumpAttack()
+    {
+        // Elevar al enemigo 10 metros hacia arriba
+        Vector3 jumpTarget = transform.position + Vector3.up * 10;
+        float jumpDuration = 1f; // Duración del salto hacia arriba
+        float elapsedTime = 0f;
+
+        while (elapsedTime < jumpDuration)
+        {
+            transform.position = Vector3.Lerp(transform.position, jumpTarget, elapsedTime / jumpDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Caer hacia la posición del jugador
+        Vector3 fallTarget = player.position;
+        float fallDuration = 0.7f; // Duración de la caída
+        elapsedTime = 0f;
+
+        while (elapsedTime < fallDuration)
+        {
+            transform.position = Vector3.Lerp(jumpTarget, fallTarget, elapsedTime / fallDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Llamar a la sacudida de cámara del jugador
+        playerController.ShakeCamera(1.55f,0.7f);
+        // Asegurarse de que el enemigo llegue exactamente a la posición del jugador
+        transform.position = fallTarget;
+
+    }
+
+    void MoverCamaraGrito() 
+    {
+        playerController.ShakeCamera(0.09f, 1.95f);
+    }
+
+    void AttackPlayer()
+    {
+        agent.isStopped = true;
+        FacePlayer();
+        animator.SetBool("isAttacking", true);
+        animator.SetBool("isWalking", false);
+    }
+
 
     void StartChasing()
     {
-        isChasing = true;
-        isShouting = false;
         agent.isStopped = false;
+        animator.SetBool("isRunning", true);
+        // Actualizar constantemente el destino del agente al jugador
+        isChasing = true;
+        // Llamar a FacePlayer() si quieres que el enemigo gire hacia el jugador mientras lo persigue
+        FacePlayer();
     }
 
-    void ChasePlayer()
+    void FacePlayer()
     {
-        agent.destination = player.position;
+        Vector3 direction = (player.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
 
-        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
-        if (distanceToPlayer <= attackRange)
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, patrolRadius);
+
+        // Dibujar el cono de visión
+        Vector3 forward = transform.forward * coneVisionRadius;
+        Vector3 leftBoundary = Quaternion.Euler(0, -visionConeAngle / 2, 0) * forward;
+        Vector3 rightBoundary = Quaternion.Euler(0, visionConeAngle / 2, 0) * forward;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + forward);
+        Gizmos.DrawLine(transform.position, transform.position + leftBoundary);
+        Gizmos.DrawLine(transform.position, transform.position + rightBoundary);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (agent.stoppingDistance == 3)
         {
-            animator.SetBool("isAttacking", true);
-        }
-        else
-        {
-            animator.SetBool("isAttacking", false);
+            animator.SetTrigger("Attack");
         }
     }
 }

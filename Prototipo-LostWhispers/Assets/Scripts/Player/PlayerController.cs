@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-
 public class PlayerController : MonoBehaviour
 {
     public GameObject flashlight_player;
@@ -18,6 +17,7 @@ public class PlayerController : MonoBehaviour
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
+    bool isShaking = false;
 
     [HideInInspector]
     public bool canMove = true;
@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             flashlight_player.transform.forward = playerCamera.transform.forward;
         }
+
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
         // as an acceleration (ms^-2)
@@ -79,5 +80,42 @@ public class PlayerController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+    }
+
+    public void ShakeCamera(float shakeMagnitude, float shakeDuration, float shakeDelay = 0f)
+    {
+        if (!isShaking)
+        {
+            StartCoroutine(Shake(shakeMagnitude, shakeDuration, shakeDelay));
+        }
+    }
+
+    private IEnumerator Shake(float shakeMagnitude, float shakeDuration, float shakeDelay)
+    {
+        isShaking = true;
+
+        // Esperar antes de comenzar la sacudida si hay un retraso
+        if (shakeDelay > 0f)
+        {
+            yield return new WaitForSeconds(shakeDelay);
+        }
+
+        Vector3 originalPosition = playerCamera.transform.localPosition;
+        float elapsed = 0.0f;
+
+        while (elapsed < shakeDuration)
+        {
+            float x = Random.Range(-1f, 1f) * shakeMagnitude;
+            float y = Random.Range(-1f, 1f) * shakeMagnitude;
+
+            playerCamera.transform.localPosition = new Vector3(x, y, originalPosition.z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        playerCamera.transform.localPosition = originalPosition;
+        isShaking = false;
     }
 }
