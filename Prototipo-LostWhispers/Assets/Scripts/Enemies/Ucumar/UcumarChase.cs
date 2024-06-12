@@ -1,9 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class EnemyAI : MonoBehaviour
 {
+    private UcumarSoundController ucumarSoundController;
+    public GameObject dirtParticle;
+
     public Transform player;
     public float lookRadius = 50f;
     public float coneVisionRadius = 30f; // Radio del cono de visión
@@ -12,7 +17,6 @@ public class EnemyAI : MonoBehaviour
     public float idleTime = 10f; // Tiempo que el enemigo se queda quieto
     public float jumpHeight = 10f; // Altura del salto
     public float visionConeAngle = 45f; // Ángulo del cono de visión
-    public float chaseSpeed = 100f; // Velocidad de persecución
 
     private Animator animator;
     private NavMeshAgent agent;
@@ -20,14 +24,17 @@ public class EnemyAI : MonoBehaviour
     private bool isIdle = false;
     private bool isChasing = false;
     private PlayerController playerController;
+    private DeformTerrain deformTerrain;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        ucumarSoundController = GetComponent<UcumarSoundController>();
+        deformTerrain = FindObjectOfType<DeformTerrain>();
 
-        agent.speed = 8;
-        agent.acceleration = 8f;
+        agent.speed = 5;
+        agent.acceleration = 2f;
         agent.angularSpeed = 360f;
         agent.stoppingDistance = attackRadius;
 
@@ -40,6 +47,8 @@ public class EnemyAI : MonoBehaviour
 
     void PatrolToRandomPoint()
     {
+        ucumarSoundController.StopSound(false); //Tenemos los gritos idle
+        ucumarSoundController.PlaySound("footsteps", true,1f,0.5f); //Pisadas
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
         randomDirection += transform.position;
         NavMeshHit hit;
@@ -52,8 +61,10 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+
     void Update()
     {
+
         if (isChasing)
         {
             agent.SetDestination(player.position);
@@ -62,6 +73,7 @@ public class EnemyAI : MonoBehaviour
             if (distanceToPlayer <= attackRadius)
             {
                 AttackPlayer();
+                agent.isStopped = true;
             }
             else
             {
@@ -84,6 +96,7 @@ public class EnemyAI : MonoBehaviour
 
             if (isInLookRadius || isInConeVision)
             {
+                ucumarSoundController.StopSound(true);
                 agent.isStopped = true;
                 FacePlayer();
                 animator.SetTrigger("Shout");
@@ -100,6 +113,8 @@ public class EnemyAI : MonoBehaviour
                             idleTimer = idleTime;
                             animator.SetBool("isWalking", false);
                             animator.SetBool("isIdle", true);
+                            ucumarSoundController.StopSound(true);
+                            ucumarSoundController.PlaySound("idle", false, 1f); //Gritos Idle
                         }
                         else
                         {
@@ -142,9 +157,10 @@ public class EnemyAI : MonoBehaviour
 
     private IEnumerator ExecuteJumpAttack()
     {
+        ucumarSoundController.PlaySound("jump", false);
         // Elevar al enemigo 10 metros hacia arriba
         Vector3 jumpTarget = transform.position + Vector3.up * 10;
-        float jumpDuration = 1f; // Duración del salto hacia arriba
+        float jumpDuration = 0.9f; // Duración del salto hacia arriba
         float elapsedTime = 0f;
 
         while (elapsedTime < jumpDuration)
@@ -156,9 +172,8 @@ public class EnemyAI : MonoBehaviour
 
         // Caer hacia la posición del jugador
         Vector3 fallTarget = player.position;
-        float fallDuration = 0.7f; // Duración de la caída
+        float fallDuration = 0.5f; // Duración de la caída
         elapsedTime = 0f;
-
         while (elapsedTime < fallDuration)
         {
             transform.position = Vector3.Lerp(jumpTarget, fallTarget, elapsedTime / fallDuration);
@@ -167,19 +182,23 @@ public class EnemyAI : MonoBehaviour
         }
 
         // Llamar a la sacudida de cámara del jugador
-        playerController.ShakeCamera(1.55f,0.7f);
+        playerController.ShakeCamera(1.55f, 0.7f);
         // Asegurarse de que el enemigo llegue exactamente a la posición del jugador
         transform.position = fallTarget;
-
         ApplyExplosionForce();
+        deformTerrain.CreateCrater(transform.position);
+        Instantiate(dirtParticle, fallTarget, Quaternion.identity);
 
+        // Reproducir sonido de caída justo antes de iniciar la caída
+        ucumarSoundController.PlaySound("falling", false, 1f, 1f);
     }
+
 
 
     private void ApplyExplosionForce()
     {
-        float explosionRadius = 10f;
-        float explosionForce = 200f;
+        float explosionRadius = 7f;
+        float explosionForce = 50f;
         Vector3 explosionPosition = transform.position;
 
         float distanceToPlayer = Vector3.Distance(explosionPosition, player.position);
@@ -192,17 +211,18 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    void MoverCamaraGrito() 
+    void UcumarShout()  //Es un evento en la animacion
     {
         playerController.ShakeCamera(0.09f, 1.95f);
+        ucumarSoundController.PlaySound("scream", false);
     }
 
     void AttackPlayer()
     {
-        agent.isStopped = true;
         FacePlayer();
         animator.SetBool("isAttacking", true);
         animator.SetBool("isWalking", false);
+        ucumarSoundController.PlaySound("slap", false, 1f, 0.9f);
     }
 
 
@@ -214,6 +234,9 @@ public class EnemyAI : MonoBehaviour
         isChasing = true;
         // Llamar a FacePlayer() si quieres que el enemigo gire hacia el jugador mientras lo persigue
         FacePlayer();
+        agent.speed = 12;
+        agent.acceleration = 10f;
+        ucumarSoundController.PlaySound("footsteps", true, 1f, 1.5f); //Pisadas
     }
 
     void FacePlayer()
@@ -241,13 +264,5 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + forward);
         Gizmos.DrawLine(transform.position, transform.position + leftBoundary);
         Gizmos.DrawLine(transform.position, transform.position + rightBoundary);
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (agent.stoppingDistance == 3)
-        {
-            animator.SetTrigger("Attack");
-        }
     }
 }

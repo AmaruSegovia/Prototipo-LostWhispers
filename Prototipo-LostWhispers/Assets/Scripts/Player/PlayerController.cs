@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         moveDirection = direction.normalized * force;
     }
 
+
     private IEnumerator Shake(float shakeMagnitude, float shakeDuration, float shakeDelay)
     {
         isShaking = true;
