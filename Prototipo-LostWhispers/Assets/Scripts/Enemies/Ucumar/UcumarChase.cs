@@ -223,6 +223,7 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", true);
         animator.SetBool("isWalking", false);
         ucumarSoundController.PlaySound("slap", false, 1f, 0.9f);
+        deformTerrain.RestoreTerrain();
     }
 
 
