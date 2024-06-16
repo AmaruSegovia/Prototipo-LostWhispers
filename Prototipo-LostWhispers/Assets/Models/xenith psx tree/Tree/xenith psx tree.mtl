@@ -1,0 +1,71 @@
+# Blender MTL File: 'treee.blend'
+# Material Count: 6
+
+newmtl Material.001
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\xenith\\Documents\\treetex.png
+
+newmtl Material.002
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\xenith\\Documents\\treetex.png
+
+newmtl Material.003
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\xenith\\Documents\\treetex.png
+
+newmtl Material.004
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\xenith\\Documents\\treetex.png
+
+newmtl Material.005
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd C:\\Users\\xenith\\Documents\\treetex.png
+
+newmtl bark
+Ns 0.000000
+Ka 0.140000 0.140000 0.140000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump -o 0.000000 -1.000000 0.000000 C:\\Users\\xenith\\Desktop\\zombie game project\\models and textures\\Projects\\trees\\barkNormal.png
+map_Kd -o 0.000000 -1.000000 0.000000 C:\\Users\\xenith\\Documents\\idek.png
+map_Ks -o 0.000000 -1.000000 0.000000 C:\\Users\\xenith\\Desktop\\zombie game project\\models and textures\\Projects\\trees\\barkspecular.png
+refl -o 0.000000 -1.000000 0.000000 C:\\Users\\xenith\\Desktop\\zombie game project\\models and textures\\Projects\\trees\\barkspecular.png
