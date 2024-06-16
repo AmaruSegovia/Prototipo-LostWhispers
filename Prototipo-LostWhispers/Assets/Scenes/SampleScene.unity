@@ -7500,8 +7500,8 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: c4320a726bddedd48bf863305445da36, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeDistance: 346
+  m_TreeBillboardDistance: 1498
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
@@ -8822,8 +8822,8 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: ae574d43ac5f45d4e940c5dea5af08e4, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeDistance: 427
+  m_TreeBillboardDistance: 1288
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
@@ -18348,7 +18348,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 605e879ad71fb9c48b6783cb38370a56, type: 2}
-  m_TreeDistance: 774
+  m_TreeDistance: 240
   m_TreeBillboardDistance: 1008
   m_TreeCrossFadeLength: 19
   m_TreeMaximumFullLODCount: 50
