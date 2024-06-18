@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class EnemyAI : MonoBehaviour
 {
