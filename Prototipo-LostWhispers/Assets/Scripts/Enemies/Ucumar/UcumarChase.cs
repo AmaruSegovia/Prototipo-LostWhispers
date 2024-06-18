@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -223,6 +224,7 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", true);
         animator.SetBool("isWalking", false);
         ucumarSoundController.PlaySound("slap", false, 1f, 0.9f);
+        deformTerrain.RestoreTerrain();
     }
 
 
