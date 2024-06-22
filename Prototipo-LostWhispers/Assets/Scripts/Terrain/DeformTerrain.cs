@@ -105,6 +105,11 @@ public class DeformTerrain : MonoBehaviour
         return terrainPosition;
     }
 
+    private void OnApplicationQuit()
+    {
+        RestoreTerrain();
+    }
+
     public void RestoreTerrain()
     {
         // Restaurar el mapa de alturas original

@@ -224,7 +224,6 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", true);
         animator.SetBool("isWalking", false);
         ucumarSoundController.PlaySound("slap", false, 1f, 0.9f);
-        deformTerrain.RestoreTerrain();
     }
 
 
@@ -236,8 +235,8 @@ public class EnemyAI : MonoBehaviour
         isChasing = true;
         // Llamar a FacePlayer() si quieres que el enemigo gire hacia el jugador mientras lo persigue
         FacePlayer();
-        agent.speed = 12;
-        agent.acceleration = 10f;
+        agent.speed = 8;
+        agent.acceleration = 5f;
         ucumarSoundController.PlaySound("footsteps", true, 1f, 1.5f); //Pisadas
     }
 
