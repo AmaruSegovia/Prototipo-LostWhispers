@@ -1432,7 +1432,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2759,7 +2759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd3ae852ba661204ea6e82a313842031, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 850.2
+      value: 841.53
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd3ae852ba661204ea6e82a313842031, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2767,7 +2767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd3ae852ba661204ea6e82a313842031, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 346.6
+      value: 350.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dd3ae852ba661204ea6e82a313842031, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13526,7 +13526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -13539,7 +13539,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -16073,7 +16073,7 @@ MonoBehaviour:
   m_WalkSpeed: 4
   m_RunSpeed: 8
   m_RunstepLenghten: 0.7
-  m_JumpSpeed: 15
+  m_JumpSpeed: 10
   m_StickToGroundForce: 10
   m_GravityMultiplier: 2
   m_MouseLook:
@@ -17302,19 +17302,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 787.4
+      value: 794.77
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 155.6
+      value: 172.4
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 335
+      value: 330.87
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9964949
+      value: -0.5698631
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalRotation.x
@@ -17322,7 +17322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0836542
+      value: -0.8217397
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalRotation.z
@@ -17334,7 +17334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -9.597
+      value: -249.481
       objectReference: {fileID: 0}
     - target: {fileID: 5554456437343130178, guid: 8a172271c67b4ef4ca71a5d20170c156, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
