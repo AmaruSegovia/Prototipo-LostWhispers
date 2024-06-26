@@ -10,10 +10,10 @@ public class PlayerInventorySystem : MonoBehaviour
     // Este método se llamará cuando ocurra una colisión
     private void OnCollisionEnter(Collision collision)
     {
-        var item = collision.gameObject.GetComponent<Item>();
+        var item = collision.gameObject.GetComponent<GroundItem>();
         if (item)
         {
-            inventory.AddItem(item.item, 1);
+            inventory.AddItem(new Item(item.item), 1);
             Destroy(collision.gameObject);
         }
     }
@@ -23,17 +23,17 @@ public class PlayerInventorySystem : MonoBehaviour
         {
 
             inventory.Save();
-            Debug.Log("aa");
+            Debug.Log("Guardado");
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
             inventory.Load();
-            Debug.Log("bb");
+            Debug.Log("Cargado");
         }
     }
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        inventory.Container.Items.Clear();
 
     }
 }

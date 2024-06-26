@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8b7f30c87f3904391f4719a0285380, type: 3}
   m_Name: Yerba
   m_EditorClassIdentifier: 
-  prefab: {fileID: 871300687028277530, guid: d114f59b6d318964a979545de899dbb0, type: 3}
+  Id: 2
+  uiDisplay: {fileID: 21300000, guid: 4b5e1925141bfb24ba86acf8193c0c4b, type: 3}
   type: 2
   description: Playadito
+  buffs: []

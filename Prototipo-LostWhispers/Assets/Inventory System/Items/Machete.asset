@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5feee7c4d066b54bafda09f12056601, type: 3}
   m_Name: Machete
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1482588255264103549, guid: 3c065222329c0a24da4ce7b77ac59320, type: 3}
+  Id: 0
+  uiDisplay: {fileID: 21300000, guid: ec2b427811f0478459984c0737516610, type: 3}
   type: 1
   description: Esta oxidado
-  atkBonus: 10
-  defenseBonus: 0
+  buffs:
+  - attribute: 1
+    value: 0
+    min: 5
+    max: 6

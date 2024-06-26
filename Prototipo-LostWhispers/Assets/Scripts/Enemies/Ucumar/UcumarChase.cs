@@ -48,7 +48,6 @@ public class EnemyAI : MonoBehaviour
 
     void PatrolToRandomPoint()
     {
-        ucumarSoundController.StopSound(false); //Tenemos los gritos idle
         ucumarSoundController.PlaySound("footsteps", true,1f,0.5f); //Pisadas
         Vector3 randomDirection = Random.insideUnitSphere * patrolRadius;
         randomDirection += transform.position;
@@ -114,8 +113,7 @@ public class EnemyAI : MonoBehaviour
                             idleTimer = idleTime;
                             animator.SetBool("isWalking", false);
                             animator.SetBool("isIdle", true);
-                            ucumarSoundController.StopSound(true);
-                            ucumarSoundController.PlaySound("idle", false, 1f); //Gritos Idle
+                            ucumarSoundController.PlaySound("idle", true, 1f); //Gritos Idle
                         }
                         else
                         {

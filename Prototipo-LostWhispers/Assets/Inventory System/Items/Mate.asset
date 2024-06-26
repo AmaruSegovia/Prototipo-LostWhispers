@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb13e873c73ac04fb6f1643a1771412, type: 3}
   m_Name: Mate
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9148195064226545025, guid: 259a36b3664f7f84bb2e8af80af908e2, type: 3}
+  Id: 1
+  uiDisplay: {fileID: 21300000, guid: e3008f13c8bd47b42b54205be13c9b50, type: 3}
   type: 0
   description: Mate?
-  restoreHealthValue: 10
+  buffs:
+  - attribute: 2
+    value: 0
+    min: 0
+    max: 0
