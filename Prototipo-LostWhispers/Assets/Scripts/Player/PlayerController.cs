@@ -8,9 +8,6 @@ public class PlayerController : MonoBehaviour
     public Camera playerCamera;
     Vector3 moveDirection = Vector3.zero;
     bool isShaking = false;
-
-    [HideInInspector]
-    //public bool canMove = true;
     void Update()
     {
         /*LINTERNA*/

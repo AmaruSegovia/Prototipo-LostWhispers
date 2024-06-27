@@ -32,6 +32,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_YRotation;
         private Vector2 m_Input;
         private Vector3 m_MoveDir = Vector3.zero;
+        private Vector3 explosionForce = Vector3.zero;
         private CharacterController m_CharacterController;
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
@@ -56,12 +57,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.Init(transform, m_Camera.transform);
         }
 
-
         // Update is called once per frame
         private void Update()
         {
             RotateView();
-            // the jump state needs to read here to make sure it is not missed
+
+            // El estado de salto necesita ser leído aquí para asegurarse de que no se pierda
             if (!m_Jump)
             {
                 m_Jump = Input.GetButtonDown("Jump");
@@ -83,6 +84,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
+
+
         private void PlayLandingSound()
         {
             m_AudioSource.clip = m_LandSound;
@@ -90,15 +93,49 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle + .5f;
         }
 
-
         private void FixedUpdate()
         {
             float speed;
             GetInput(out speed);
-            // always move along the camera forward as it is the direction that it being aimed at
+
+            Vector3 move = Vector3.zero;
+
+            if (explosionForce != Vector3.zero)
+            {
+                // Aplica la fuerza de explosión y la reduce gradualmente
+                m_CharacterController.Move(explosionForce * Time.fixedDeltaTime);
+                explosionForce = Vector3.Lerp(explosionForce, Vector3.zero, Time.fixedDeltaTime * 1.5f); // Reducción más rápida
+            }
+
+            // Actualiza la dirección de movimiento y permite saltar
+            UpdateMoveDirection(speed);
+            move = m_MoveDir * Time.fixedDeltaTime;
+
+            // Aplica la gravedad siempre
+            if (!m_CharacterController.isGrounded || explosionForce != Vector3.zero)
+            {
+                move.y += Physics.gravity.y * Time.fixedDeltaTime;
+            }
+
+            m_CollisionFlags = m_CharacterController.Move(move);
+
+            // Si golpea un techo, ajusta el movimiento vertical
+            if ((m_CollisionFlags & CollisionFlags.Above) != 0)
+            {
+                m_MoveDir.y = 0;
+            }
+
+            ProgressStepCycle(speed);
+            UpdateCameraPosition(speed);
+
+            m_MouseLook.UpdateCursorLock();
+        }
+
+
+        private void UpdateMoveDirection(float speed)
+        {
             Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
 
-            // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
                                m_CharacterController.height / 2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
@@ -106,7 +143,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_MoveDir.x = desiredMove.x * speed;
             m_MoveDir.z = desiredMove.z * speed;
-
 
             if (m_CharacterController.isGrounded)
             {
@@ -124,21 +160,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir += Physics.gravity * m_GravityMultiplier * Time.fixedDeltaTime;
             }
-            m_CollisionFlags = m_CharacterController.Move(m_MoveDir * Time.fixedDeltaTime);
-
-            ProgressStepCycle(speed);
-            UpdateCameraPosition(speed);
-
-            m_MouseLook.UpdateCursorLock();
         }
 
+        public void ApplyExplosionForce(Vector3 direction, float force)
+        {
+            direction.y = 10f;  // Controla la altura de la explosión
+            explosionForce = direction.normalized * force;
+        }
 
         private void PlayJumpSound()
         {
             m_AudioSource.clip = m_JumpSound;
             m_AudioSource.Play();
         }
-
 
         private void ProgressStepCycle(float speed)
         {
@@ -158,7 +192,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             PlayFootStepAudio();
         }
 
-
         private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
@@ -174,7 +207,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
         }
-
 
         private void UpdateCameraPosition(float speed)
         {
@@ -198,7 +230,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             m_Camera.transform.localPosition = newCameraPosition;
         }
-
 
         private void GetInput(out float speed)
         {
@@ -232,19 +263,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-
         private void RotateView()
         {
             m_MouseLook.LookRotation(transform, m_Camera.transform);
         }
 
-
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             Rigidbody body = hit.collider.attachedRigidbody;
-            //dont move the rigidbody if the character is on top of it
+
+            // Si el jugador está sobre un cuerpo rígido, no lo mueve
             if (m_CollisionFlags == CollisionFlags.Below)
             {
+                explosionForce = Vector3.zero; // Reinicia la fuerza de explosión al tocar el suelo
                 return;
             }
 
@@ -254,5 +285,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity * 0.1f, hit.point, ForceMode.Impulse);
         }
+
     }
 }

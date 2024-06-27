@@ -113,6 +113,7 @@ public class EnemyAI : MonoBehaviour
                             idleTimer = idleTime;
                             animator.SetBool("isWalking", false);
                             animator.SetBool("isIdle", true);
+                            ucumarSoundController.StopSound(true);
                             ucumarSoundController.PlaySound("idle", true, 1f); //Gritos Idle
                         }
                         else
@@ -196,18 +197,39 @@ public class EnemyAI : MonoBehaviour
 
     private void ApplyExplosionForce()
     {
-        float explosionRadius = 7f;
+        float explosionRadius = 10f;
         float explosionForce = 50f;
         Vector3 explosionPosition = transform.position;
 
+        // Aplica la explosión al jugador si está dentro del radio
         float distanceToPlayer = Vector3.Distance(explosionPosition, player.position);
-
         if (distanceToPlayer <= explosionRadius)
         {
             Vector3 explosionDirection = (player.position - explosionPosition).normalized;
-            playerController.ApplyExplosionForce(explosionDirection, explosionForce);
+            explosionDirection.y = 0; // Asegura que la fuerza esté distribuida horizontalmente
+            player.GetComponent<FirstPersonController>().ApplyExplosionForce(explosionDirection, explosionForce);
+            Debug.Log("Explosion force applied to player."); // Agregar para debug
+        }
+
+        // Encuentra todos los objetos con Rigidbody dentro del radio de la explosión
+        Collider[] colliders = Physics.OverlapSphere(explosionPosition, explosionRadius);
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            if (rb != null && hit.gameObject != gameObject)
+            {
+                // Descongelar restricciones de posición y rotación si están congeladas
+                rb.constraints = RigidbodyConstraints.None;
+
+                Vector3 explosionDirection = (rb.transform.position - explosionPosition).normalized;
+                explosionDirection.y = 0; // Asegura que la fuerza esté distribuida horizontalmente
+                rb.AddForce(explosionDirection * explosionForce, ForceMode.Impulse);
+            }
         }
     }
+
+
+
 
 
     void UcumarShout()  //Es un evento en la animacion
