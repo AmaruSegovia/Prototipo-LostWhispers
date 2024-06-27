@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BedTexture
+  m_Name: Divider
   m_Shader: {fileID: 4800000, guid: 7df62e33d3d17584ab47e30a7e668103, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: baab36d0baeceb340b9d33cd4bd93351, type: 3}
+        m_Texture: {fileID: 2800000, guid: f9863a646e7d32c478adc40921f904a9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
