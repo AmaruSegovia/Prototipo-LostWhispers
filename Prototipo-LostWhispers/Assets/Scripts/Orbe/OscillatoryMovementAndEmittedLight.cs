@@ -21,6 +21,6 @@ public class OscillatoryMovementAndEmittedLight : MonoBehaviour
     }
     void effectPingPongLight()
     {
-        lightOrb.intensity = Mathf.PingPong(Time.time, 1);
+        lightOrb.intensity = Mathf.PingPong(Time.time, 1 * 3);
     }
 }
