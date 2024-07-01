@@ -224,9 +224,30 @@ public class EnemyAI : MonoBehaviour
                 Vector3 explosionDirection = (rb.transform.position - explosionPosition).normalized;
                 explosionDirection.y = 0; // Asegura que la fuerza esté distribuida horizontalmente
                 rb.AddForce(explosionDirection * explosionForce, ForceMode.Impulse);
+
+                // Desactivar NavMeshAgent si existe
+                NavMeshAgent navAgent = hit.GetComponent<NavMeshAgent>();
+                if (navAgent != null)
+                {
+                    navAgent.enabled = false;
+                }
+
+                // Desactivar FollowPlayer si existe
+                FollowPlayer followScript = hit.GetComponent<FollowPlayer>();
+                if (followScript != null)
+                {
+                    followScript.enabled = false;
+                }
+                SheepSoundManager sheepSoundManager = hit.GetComponent<SheepSoundManager>();
+                if (sheepSoundManager != null)
+                {
+                    sheepSoundManager.stopSound();
+                    sheepSoundManager.enabled = false;
+                }
             }
         }
     }
+
 
 
 
