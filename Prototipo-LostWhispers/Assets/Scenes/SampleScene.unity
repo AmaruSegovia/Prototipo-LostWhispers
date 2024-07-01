@@ -7735,7 +7735,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -31659,7 +31659,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -45330,12 +45330,11 @@ Transform:
   m_GameObject: {fileID: 819106716}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.705462, z: -0, w: 0.7087478}
-  m_LocalPosition: {x: 812, y: 203.86, z: 231.8}
+  m_LocalPosition: {x: 777.2, y: 203.86, z: 218.1}
   m_LocalScale: {x: 1.2000002, y: 1.2, z: 1.2000002}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 649562022}
-  - {fileID: 1104766420}
   - {fileID: 963194228}
   - {fileID: 1549592909}
   m_Father: {fileID: 0}
@@ -49590,7 +49589,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 819106722}
+    m_TransformParent: {fileID: 963194228}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f75f479e8ba2d3246a5f68d69a767865, type: 3}
       propertyPath: m_LocalScale.x
@@ -49606,27 +49605,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f75f479e8ba2d3246a5f68d69a767865, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.732
+      value: 0.732002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f75f479e8ba2d3246a5f68d69a767865, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.242
+      value: -0.7420044
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f75f479e8ba2d3246a5f68d69a767865, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.757
+      value: 0.75699025
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f75f479e8ba2d3246a5f68d69a767865, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.3245658
+      value: -0.32456577
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f75f479e8ba2d3246a5f68d69a767865, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19173805
+      value: 0.19173808
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f75f479e8ba2d3246a5f68d69a767865, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6981874
+      value: 0.6981875
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f75f479e8ba2d3246a5f68d69a767865, type: 3}
       propertyPath: m_LocalRotation.z
@@ -49890,6 +49889,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 354873330}
+  - {fileID: 1104766420}
   m_Father: {fileID: 819106722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!124 &963194229
@@ -59338,7 +59338,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -62246,7 +62246,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -86359,7 +86359,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -87049,7 +87049,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -90490,7 +90490,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -95032,7 +95032,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
