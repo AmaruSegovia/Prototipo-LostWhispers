@@ -21,7 +21,6 @@ public class PlayerCarrySheep : MonoBehaviour
                 TryPickUpSheep();
             }
         }
-
         // Si estamos cargando una oveja, asegúrate de que está en la posición correcta.
         if (carriedSheep != null)
         {
@@ -32,7 +31,7 @@ public class PlayerCarrySheep : MonoBehaviour
     void TryPickUpSheep()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 20f))
         {
             if (hit.collider.CompareTag("Sheep"))
             {
