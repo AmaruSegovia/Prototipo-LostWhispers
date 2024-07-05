@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -191,8 +192,23 @@ public class EnemyAI : MonoBehaviour
 
         // Reproducir sonido de caída justo antes de iniciar la caída
         ucumarSoundController.PlaySound("falling", false, 1f, 1f);
-    }
+        // Restaurar el terreno si estamos en la escena SampleScene y cambiar de escena después de 10 segundos
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            StartCoroutine(RestoreTerrainDelay(0.99f));
+            StartCoroutine(ChangeSceneAfterDelay("ScenePlay", 1f));
+        }
+        if (SceneManager.GetActiveScene().name == "ScenePlay")
+        {
+            StartCoroutine(RestoreTerrainDelay(1f));
+        }
 
+    }
+    private IEnumerator RestoreTerrainDelay( float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        deformTerrain.RestoreTerrain();
+    }
 
 
     private void ApplyExplosionForce()
@@ -248,15 +264,22 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-
-
-
+    private IEnumerator ChangeSceneAfterDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneController.instance.LoadScene(sceneName);
+    }
 
 
     void UcumarShout()  //Es un evento en la animacion
     {
         playerController.ShakeCamera(0.09f, 1.95f);
         ucumarSoundController.PlaySound("scream", false);
+    }
+    private IEnumerator ReloadSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Recargar la escena actual
     }
 
     void AttackPlayer()
@@ -265,8 +288,10 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isAttacking", true);
         animator.SetBool("isWalking", false);
         ucumarSoundController.PlaySound("slap", false, 1f, 0.9f);
-    }
 
+        // Iniciar corrutina para recargar la escena después de 5 segundos
+        StartCoroutine(ReloadSceneAfterDelay(.5f));
+    }
 
     void StartChasing()
     {

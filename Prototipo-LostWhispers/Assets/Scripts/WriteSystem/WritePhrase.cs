@@ -10,8 +10,10 @@ public class WritePhrase : MonoBehaviour
     public GameObject ucumar;
     public GameObject parpadoArriba;
     public GameObject parpadoAbajo;
+    public GameObject mensaje;
     private Animator animParpadoArriba;
     private Animator animParpadoAbajo;
+    private Animator animMensaje;
     private bool isTyping = false;
     private bool isCompleted = false;
 
@@ -20,6 +22,7 @@ public class WritePhrase : MonoBehaviour
     {
         animParpadoArriba = parpadoArriba.GetComponent<Animator>();
         animParpadoAbajo = parpadoAbajo.GetComponent<Animator>();
+        animMensaje = mensaje.GetComponent<Animator>();
         if (phrases.Length > 0)
         {
             StartCoroutine(TypeText(phrases[currentPhraseIndex]));
@@ -28,34 +31,44 @@ public class WritePhrase : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Detect click anywhere on the screen
+        if (phrases.Length == 0)
         {
-            if (isTyping)
-            {
-                // Finish the current text immediately
-                StopAllCoroutines();
-                texto.text = phrases[currentPhraseIndex];
-                isTyping = false;
-                isCompleted = true;
-            }
-            else if (isCompleted)
-            {
-                if (currentPhraseIndex < phrases.Length - 1)
-                {
-                    currentPhraseIndex++;
-                    texto.text = ""; // Clear the current text
-                    StartCoroutine(TypeText(phrases[currentPhraseIndex])); // Start typing the next phrase
-                }
-                else
-                {
-                    // All phrases have been shown, trigger animation and disable text
+            animParpadoArriba.SetTrigger("upEyeSpeed");
+            animParpadoAbajo.SetTrigger("downEyeSpeed");
+            animMensaje.SetTrigger("activeMensaje");
+        }
+        else
+        {
 
-                    animParpadoArriba.SetTrigger("upEye");
-                    animParpadoAbajo.SetTrigger("downEye");
-                    texto.enabled = false;
-                    ucumar.SetActive(true);
+            if (Input.GetMouseButtonDown(0)) // Detect click anywhere on the screen
+            {
+                if (isTyping)
+                {
+                    // Finish the current text immediately
+                    StopAllCoroutines();
+                    texto.text = phrases[currentPhraseIndex];
+                    isTyping = false;
+                    isCompleted = true;
                 }
-                isCompleted = false;
+                else if (isCompleted)
+                {
+                    if (currentPhraseIndex < phrases.Length - 1)
+                    {
+                        currentPhraseIndex++;
+                        texto.text = ""; // Clear the current text
+                        StartCoroutine(TypeText(phrases[currentPhraseIndex])); // Start typing the next phrase
+                    }
+                    else
+                    {
+                        // All phrases have been shown, trigger animation and disable text
+
+                        animParpadoArriba.SetTrigger("upEye");
+                        animParpadoAbajo.SetTrigger("downEye");
+                        texto.enabled = false;
+                        ucumar.SetActive(true);
+                    }
+                    isCompleted = false;
+                }
             }
         }
     }
