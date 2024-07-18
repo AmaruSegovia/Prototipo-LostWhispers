@@ -39,8 +39,6 @@ public class WeaponConfiguration : MonoBehaviour
     //Referencias
     [Header("Camara del jugador")]
     public Camera fpsCam;
-    [Header("Respawn de la bala")]
-    public Transform attackPoint;
     [Header("Objeto impactado")]
     public RaycastHit rayHit;
     [Header("Enemigo que se puede bajar la vida")]
