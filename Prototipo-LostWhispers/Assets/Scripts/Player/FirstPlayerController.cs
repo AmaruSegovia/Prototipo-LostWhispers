@@ -23,9 +23,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] float m_StepInterval;
-        [SerializeField] AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
-        [SerializeField] AudioClip m_JumpSound;           // the sound played when character leaves the ground.
-        [SerializeField] AudioClip m_LandSound;           // the sound played when character touches back on ground.
+        [SerializeField] AudioClip[] m_FootstepSounds;    
+        [SerializeField] AudioClip m_JumpSound;           
+        [SerializeField] AudioClip m_LandSound;
+
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -42,7 +43,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
-        // Use this for initialization
         private void Start()
         {
             m_CharacterController = GetComponent<CharacterController>();
@@ -62,28 +62,47 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-            // El estado de salto necesita ser leído aquí para asegurarse de que no se pierda
-            if (!m_Jump)
+            // Handle walking effect
+            float speed;
+            GetInput(out speed);
+
+            Vector3 move = Vector3.zero;
+
+            if (explosionForce != Vector3.zero)
             {
-                m_Jump = Input.GetButtonDown("Jump");
+                // Apply explosion force and gradually reduce it
+                m_CharacterController.Move(explosionForce * Time.fixedDeltaTime);
+                explosionForce = Vector3.Lerp(explosionForce, Vector3.zero, Time.fixedDeltaTime * 1.5f); // Faster reduction
             }
+
+            // Update movement direction and allow jumping
+            UpdateMoveDirection(speed);
+            move = m_MoveDir * Time.fixedDeltaTime;
+
+            // Apply gravity always
+            if (!m_CharacterController.isGrounded || explosionForce != Vector3.zero)
+            {
+                move.y += Physics.gravity.y * Time.fixedDeltaTime;
+            }
+
+            m_CollisionFlags = m_CharacterController.Move(move);
+
+            // If hitting a ceiling, adjust vertical movement
+            if ((m_CollisionFlags & CollisionFlags.Above) != 0)
+            {
+                m_MoveDir.y = 0;
+            }
+
+            ProgressStepCycle(speed);
+            UpdateCameraPosition(speed);
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
-                StartCoroutine(m_JumpBob.DoBobCycle());
                 PlayLandingSound();
-                m_MoveDir.y = 0f;
-                m_Jumping = false;
             }
-            if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
-            {
-                m_MoveDir.y = 0f;
-            }
-
+            m_MouseLook.UpdateCursorLock();
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
-
-
 
 
         private void PlayLandingSound()
@@ -198,12 +217,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 return;
             }
-            // pick & play a random footstep sound from the array,
-            // excluding sound at index 0
             int n = Random.Range(1, m_FootstepSounds.Length);
             m_AudioSource.clip = m_FootstepSounds[n];
             m_AudioSource.PlayOneShot(m_AudioSource.clip);
-            // move picked sound to index 0 so it's not picked next time
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
         }
@@ -240,22 +256,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT
-            // On standalone builds, walk/run speed is modified by a key press.
-            // keep track of whether or not the character is walking or running
+
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
-            // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
             m_Input = new Vector2(horizontal, vertical);
 
-            // normalize input if it exceeds 1 in combined length:
             if (m_Input.sqrMagnitude > 1)
             {
                 m_Input.Normalize();
             }
 
-            // handle speed change to give an fov kick
-            // only if the player is going to a run, is running and the fovkick is to be used
             if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
             {
                 StopAllCoroutines();

@@ -123,20 +123,19 @@ public class WeaponConfiguration : MonoBehaviour
         Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
 
         //RayCast
+        //Debug.DrawRay(fpsCam.transform.position, direction * 1300f, Color.red);
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, whatIsEnemy))
         {
             Debug.Log(rayHit.collider.name);
-
-            //Usar este if para el ucumar
+            //Usar este if para el Todos los tipos de enemigos
             /*if (rayHit.collider.CompareTag("Enemy"))
             {
                 rayHit.collider.GetComponent<ShootingAI>().TakeDamage(damage);
             }*/
         }
+
         /*CAMERA SHAKE*/
         CameraShaker.Instance.ShakeOnce(camShakerMagnitude, roughness, fadeInTime, fadeOutTime);
-        /*Particulas*/
-        //Instantiate(bulletHoleGraphic, rayHit.point, Quaternion.Euler(0, 180, 0));
 
         bulletsLeft--;
         bulletsShot--;
