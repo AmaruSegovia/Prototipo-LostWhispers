@@ -14534,7 +14534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &354873330
 Transform:
   m_ObjectHideFlags: 0
@@ -52060,7 +52060,6 @@ GameObject:
   - component: {fileID: 819106722}
   - component: {fileID: 819106719}
   - component: {fileID: 819106718}
-  - component: {fileID: 819106717}
   - component: {fileID: 819106723}
   - component: {fileID: 819106726}
   - component: {fileID: 819106725}
@@ -52072,20 +52071,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &819106717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819106716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80c34689401a72e429e53d6492d36b6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashlight_player: {fileID: 354873329}
-  playerCamera: {fileID: 963194227}
 --- !u!143 &819106718
 CharacterController:
   m_ObjectHideFlags: 0
@@ -52144,7 +52129,7 @@ Transform:
   m_GameObject: {fileID: 819106716}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 802.27, y: 204.41, z: 226.58}
+  m_LocalPosition: {x: 781.77, y: 204.74, z: 199.9}
   m_LocalScale: {x: 1.2000002, y: 1.2, z: 1.2000002}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -52270,8 +52255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 4
-  m_RunSpeed: 8
+  m_WalkSpeed: 3
+  m_RunSpeed: 4.5
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 14
   m_StickToGroundForce: 5
@@ -117690,7 +117675,7 @@ Transform:
   m_GameObject: {fileID: 6571945344240120462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.374, y: -0.347, z: 0.577}
+  m_LocalPosition: {x: 0.237, y: -0.304, z: 0.653}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -117967,7 +117952,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 0
   Mute: 0
