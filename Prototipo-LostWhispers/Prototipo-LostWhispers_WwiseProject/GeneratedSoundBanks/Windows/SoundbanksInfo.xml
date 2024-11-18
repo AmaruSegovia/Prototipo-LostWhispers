@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{74778684-D041-52B6-951D-E0468A3D596D}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="290995714" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Salida.wav</ShortName>
+					<CachePath>SFX/Salida_818F3B66.wem</CachePath>
+				</File>
+				<File Id="527795062" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Entrada.wav</ShortName>
+					<CachePath>SFX/Entrada_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1285976871" Name="Play_Entrada" DurationType="OneShot" DurationMin="4.841979" DurationMax="4.841979">
+					<MediaRefs>
+						<MediaRef Id="527795062"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4081837998" Name="Play_Salida" DurationType="OneShot" DurationMin="4.9742084" DurationMax="4.9742084">
+					<MediaRefs>
+						<MediaRef Id="290995714"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{15474B66-6118-4823-F9CA-77EC0F3FCD56}</FileHash>
+</SoundBanksInfo>

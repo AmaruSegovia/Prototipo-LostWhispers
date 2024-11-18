@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1285976871	Play_Entrada			\Default Work Unit\Play_Entrada	
+	4081837998	Play_Salida			\Default Work Unit\Play_Salida	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	290995714	Salida	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Salida_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Salida		955144
+	527795062	Entrada	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Entrada_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Entrada		929756
+

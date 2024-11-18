@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Entrada" ID="{F8FBC25E-DC84-4463-BAFF-387BA1B94C4C}" ShortID="846466539">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C01D541F-35DB-49FB-A9E6-039714FF3B0F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Entrada" ID="{A79FC857-62FD-4606-AA76-9B42382E1898}">
+							<Language>SFX</Language>
+							<AudioFile>Entrada.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="527795062"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Entrada" ID="{A79FC857-62FD-4606-AA76-9B42382E1898}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Salida" ID="{5F1711F2-C189-438B-91D3-C745D6C83496}" ShortID="920714974">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C01D541F-35DB-49FB-A9E6-039714FF3B0F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Salida" ID="{22448138-CBF4-4FD7-95FD-A9087B06EA39}">
+							<Language>SFX</Language>
+							<AudioFile>Salida.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="290995714"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Salida" ID="{22448138-CBF4-4FD7-95FD-A9087B06EA39}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

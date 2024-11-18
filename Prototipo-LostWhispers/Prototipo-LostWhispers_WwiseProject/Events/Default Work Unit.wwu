@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AA6934C2-1082-4642-AE11-7460CD35A906}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{AA6934C2-1082-4642-AE11-7460CD35A906}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Entrada" ID="{62EF2829-6357-4552-AA3E-12A3B0A60D0D}">
+					<ChildrenList>
+						<Action Name="" ID="{399E2260-774D-4FC3-9311-3ACE7FB863B7}" ShortID="22515554">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Entrada" ID="{F8FBC25E-DC84-4463-BAFF-387BA1B94C4C}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Salida" ID="{B5AB880B-602B-4DD5-8B5F-057CEF5798BB}">
+					<ChildrenList>
+						<Action Name="" ID="{A6602FA8-8D9E-4DCF-AA55-C94F6F81CAA3}" ShortID="723925287">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Salida" ID="{5F1711F2-C189-438B-91D3-C745D6C83496}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

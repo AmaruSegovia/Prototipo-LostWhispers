@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="Prototipo-LostWhispers_WwiseProject" GUID="{83E0BA4C-CA83-420D-BA63-3C90A93A26C4}" Generator="2023.1.8.8601"/>
+	<CacheRoot>../../../../Prototipo-LostWhispers_WwiseProject/.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{3B064CAE-186E-404A-B4CF-EB80ED7CD345}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../Prototipo-LostWhispers_WwiseProject/GeneratedSoundBanks/Mac"/>
+		<Platform Name="Windows" GUID="{E7262E28-8BC5-4846-935B-AD66567F3CE7}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../Prototipo-LostWhispers_WwiseProject/GeneratedSoundBanks/Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{B0A6EC75-641B-40CB-9FCB-E046D1D410CA}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{F9A1BE5A-B55D-9B4C-A93A-3ED7865508D4}</FileHash>
+</ProjectInfo>
