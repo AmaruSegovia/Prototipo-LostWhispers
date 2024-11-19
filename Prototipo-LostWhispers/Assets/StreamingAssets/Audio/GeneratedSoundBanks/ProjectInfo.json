@@ -1,0 +1,36 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "Prototipo-LostWhispers_WwiseProject",
+   "GUID": "{59E816C1-E8E8-4EAD-9156-EA59C1349705}",
+   "Generator": "2024.1.0.8669"
+  },
+  "CacheRoot": "../../../../Prototipo-LostWhispers_WwiseProject/.cache",
+  "Platforms": [
+   {
+    "Name": "Mac",
+    "GUID": "{109F28AD-5A57-4C33-A8F1-91AABF44B1A8}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "../../../../Prototipo-LostWhispers_WwiseProject/GeneratedSoundBanks/Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{9CA509AA-2F33-4982-90A1-4C94E0B0DB6D}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../../../../Prototipo-LostWhispers_WwiseProject/GeneratedSoundBanks/Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{5B98718E-B60F-4A9F-9B25-8BCDA990140D}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{1D82EC81-4DE9-BFB0-B463-56C9784F309C}"
+ }
+}

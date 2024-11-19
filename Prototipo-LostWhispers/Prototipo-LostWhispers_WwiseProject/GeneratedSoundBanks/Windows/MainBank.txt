@@ -1,0 +1,19 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2247432076	Oveja			\Default Work Unit\Oveja	
+	2508554500	ActivarViolines			\Default Work Unit\ActivarViolines	
+	2548238350	Radio			\Default Work Unit\Radio	
+	3542090678	Monstruo			\Default Work Unit\Monstruo	
+	3823442842	CharcoInOut			\Default Work Unit\CharcoInOut	
+	3831537568	Puerta			\Default Work Unit\Puerta	
+	4095160060	Ambiente			\Default Work Unit\Ambiente	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	216199835	Ambiente	C:\Users\Nacho\Unity Projects\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\1C\{1CDF31D4-F73B-5454-A31D-F8137BD4FD2A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiente		5115840
+	460601276	mixkit-man-coughing-hard-2228	C:\Users\Nacho\Unity Projects\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\AE\{AE41DF17-A039-4062-B723-D609CAC8BB72}.wem		\Actor-Mixer Hierarchy\Default Work Unit\mixkit-man-coughing-hard-2228		409692
+	609593253	mixkit-sick-man-coughing-2221	C:\Users\Nacho\Unity Projects\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\16\{165CD7CF-3671-A7CB-FF32-DE7C8D20F930}.wem		\Actor-Mixer Hierarchy\Default Work Unit\mixkit-sick-man-coughing-2221		219232
+	662616917	Composocion1	C:\Users\Nacho\Unity Projects\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\6B\{6BFB811F-D608-24B7-85F1-CDE017820B99}.wem		\Interactive Music Hierarchy\Default Work Unit\Playlist\Composición\Composocion1		2425360
+	816958429	mixkit-crow-shor-crowing-316	C:\Users\Nacho\Unity Projects\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\E8\{E86DC7E1-8B99-CEED-1637-11DC1FF1AFFD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\mixkit-crow-shor-crowing-316		143368
+	1014259028	mixkit-scary-wooden-door-opening-190	C:\Users\Nacho\Unity Projects\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\B0\{B0CA81BB-5690-45EC-BF12-4420AD4A35CF}.wem		\Actor-Mixer Hierarchy\Default Work Unit\mixkit-scary-wooden-door-opening-190		621372
+	1031939116	Composicion2	C:\Users\Nacho\Unity Projects\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\E4\{E400AE8D-C8D4-D7AD-04A6-AF11A38A3671}.wem		\Interactive Music Hierarchy\Default Work Unit\Playlist\Composición\Composicion2		2425360
+	1048717375	TP2_Ismael Ignacio Miguel Torres	C:\Users\Nacho\Unity Projects\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\B9\{B9DB1B5D-4665-9F46-924F-0F9A84F042B9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\TP2_Ismael Ignacio Miguel Torres		29117304
+
