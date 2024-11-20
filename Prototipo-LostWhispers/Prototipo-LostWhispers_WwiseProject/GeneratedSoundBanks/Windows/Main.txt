@@ -1,8 +1,28 @@
 Event	ID	Name			Wwise Object Path	Notes
-	1285976871	Play_Entrada			\Default Work Unit\Play_Entrada	
-	4081837998	Play_Salida			\Default Work Unit\Play_Salida	
+	94063951	Play_Ambiente			\Default Work Unit\Play_Ambiente	
+	272922689	Play_SonidoPuente			\Default Work Unit\Play_SonidoPuente	
+	996021066	UnMuteBombo			\Default Work Unit\UnMuteBombo	
+	1155422426	UnMuteGuitarra			\Default Work Unit\UnMuteGuitarra	
+	2902559845	MuteBombo			\Default Work Unit\MuteBombo	
+	2919192974	Play_SalidaTrigger			\Default Work Unit\Play_SalidaTrigger	
+	3039658800	Play_programacion_radio			\Default Work Unit\Play_programacion_radio	
+	3173702069	Play_Oveja			\Default Work Unit\Play_Oveja	
+	3222823551	MuteGuitarra			\Default Work Unit\MuteGuitarra	
+	3304780337	Play_EntradaTrigger			\Default Work Unit\Play_EntradaTrigger	
+	3630959244	UnMuteViolin			\Default Work Unit\UnMuteViolin	
+	3636456090	Play_se_ora_habla_cosas			\Default Work Unit\Play_se_ora_habla_cosas	
+	3776054341	MuteViolin			\Default Work Unit\MuteViolin	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	290995714	Salida	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Salida_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Salida		955144
-	527795062	Entrada	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Entrada_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Entrada		929756
+	15661968	señora_habla_cosas	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\señora_habla_cosas_F684B7C0.wem		\Actor-Mixer Hierarchy\Default Work Unit\señora_habla_cosas		3879444
+	125727963	Violin	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Violin_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Mix\Musica\Violin		4867076
+	151752092	Bombo	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Bombo_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Mix\Musica\Bombo		4826188
+	389748634	programacion_radio	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\programacion_radio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\programacion_radio		20687016
+	473815284	SonidoPuente	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\SonidoPuente_E1C59975.wem		\Actor-Mixer Hierarchy\Default Work Unit\SonidoPuente		2112144
+	501677615	Oveja	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Oveja_0F4A4EBF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Oveja		767844
+	528287850	SalidaTrigger	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\SalidaTrigger_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SalidaTrigger		594996
+	561144194	Guitarra	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Guitarra_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Mix\Musica\Guitarra		4821876
+	725485195	EntradaTrigger	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\EntradaTrigger_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\EntradaTrigger		574488
+	734175869	Violonchelo	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Violonchelo_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Mix\Musica\Violonchelo		4813536
+	740552284	Ambiente	C:\Users\array\OneDrive\Escritorio\Lost-Whisper\Prototipo-LostWhispers\Prototipo-LostWhispers\Prototipo-LostWhispers_WwiseProject\.cache\Windows\SFX\Ambiente_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambiente		27496216
 

@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: f44ff2a5a8e1114999028d5c5f9a0851
     GuidInternal: 
-    m_lastTime: -8584697137425072143
+    m_lastTime: -8584695506583945927
     List:
     - name: Main
       guid: 4d727f9c33eecf4a92e774168d00248d
@@ -94,11 +94,11 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: c23469aa82104246ae117460cd35a906
     GuidInternal: 
-    m_lastTime: -8584697137831076822
+    m_lastTime: -8584695468053336799
     List:
-    - name: Play_Entrada
-      guid: 2928ef6257635245aa3e12a3b0a60d0d
-      id: 1285976871
+    - name: MuteBombo
+      guid: 4b798bee62e64e47b8dc86ac04e1bfb6
+      id: 2902559845
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -106,16 +106,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: c23469aa82104246ae117460cd35a906
-      - ElementName: Play_Entrada
+      - ElementName: MuteBombo
         ObjectType: 3
-        guid: 2928ef6257635245aa3e12a3b0a60d0d
-      Path: Events\Default Work Unit\Play_Entrada
+        guid: 4b798bee62e64e47b8dc86ac04e1bfb6
+      Path: Events\Default Work Unit\MuteBombo
       maxAttenuation: 0
-      maxDuration: 4.841979
-      minDuration: 4.841979
-    - name: Play_Salida
-      guid: 0b88abb52b60d54d8b5f057cef5798bb
-      id: 4081837998
+      maxDuration: 0
+      minDuration: 0
+    - name: MuteGuitarra
+      guid: 6480e7bc43a6224ebddee1f45773f2e7
+      id: 3222823551
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -123,13 +123,200 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: c23469aa82104246ae117460cd35a906
-      - ElementName: Play_Salida
+      - ElementName: MuteGuitarra
         ObjectType: 3
-        guid: 0b88abb52b60d54d8b5f057cef5798bb
-      Path: Events\Default Work Unit\Play_Salida
+        guid: 6480e7bc43a6224ebddee1f45773f2e7
+      Path: Events\Default Work Unit\MuteGuitarra
       maxAttenuation: 0
-      maxDuration: 4.9742084
-      minDuration: 4.9742084
+      maxDuration: 0
+      minDuration: 0
+    - name: MuteViolin
+      guid: 4a9bdceb9859734c8d22f3248c365062
+      id: 3776054341
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: MuteViolin
+        ObjectType: 3
+        guid: 4a9bdceb9859734c8d22f3248c365062
+      Path: Events\Default Work Unit\MuteViolin
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Ambiente
+      guid: 033700c4eb1e5b4299ba00b133b625d6
+      id: 94063951
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: Play_Ambiente
+        ObjectType: 3
+        guid: 033700c4eb1e5b4299ba00b133b625d6
+      Path: Events\Default Work Unit\Play_Ambiente
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_EntradaTrigger
+      guid: 2cd36234d7dcb2478a040c0ba7aa6fc1
+      id: 3304780337
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: Play_EntradaTrigger
+        ObjectType: 3
+        guid: 2cd36234d7dcb2478a040c0ba7aa6fc1
+      Path: Events\Default Work Unit\Play_EntradaTrigger
+      maxAttenuation: 0
+      maxDuration: 2.991625
+      minDuration: 2.991625
+    - name: Play_Oveja
+      guid: 48c930a77a994d438b3e84a81374d9d7
+      id: 3173702069
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: Play_Oveja
+        ObjectType: 3
+        guid: 48c930a77a994d438b3e84a81374d9d7
+      Path: Events\Default Work Unit\Play_Oveja
+      maxAttenuation: 40
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_programacion_radio
+      guid: 4017c0c5950b2547b5530fa98a024d76
+      id: 3039658800
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: Play_programacion_radio
+        ObjectType: 3
+        guid: 4017c0c5950b2547b5530fa98a024d76
+      Path: Events\Default Work Unit\Play_programacion_radio
+      maxAttenuation: 15
+      maxDuration: 107.74438
+      minDuration: 107.74438
+    - name: Play_SalidaTrigger
+      guid: ab92c83f007df74c84d2d9f79ea30660
+      id: 2919192974
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: Play_SalidaTrigger
+        ObjectType: 3
+        guid: ab92c83f007df74c84d2d9f79ea30660
+      Path: Events\Default Work Unit\Play_SalidaTrigger
+      maxAttenuation: 0
+      maxDuration: 3.0984375
+      minDuration: 3.0984375
+    - name: Play_se_ora_habla_cosas
+      guid: 5689043cfe31f44187dbcf536140bfc3
+      id: 3636456090
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: Play_se_ora_habla_cosas
+        ObjectType: 3
+        guid: 5689043cfe31f44187dbcf536140bfc3
+      Path: Events\Default Work Unit\Play_se_ora_habla_cosas
+      maxAttenuation: 18
+      maxDuration: 20.204943
+      minDuration: 20.204943
+    - name: Play_SonidoPuente
+      guid: 4e3bd1616c3c434bb610e87fd5f18683
+      id: 272922689
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: Play_SonidoPuente
+        ObjectType: 3
+        guid: 4e3bd1616c3c434bb610e87fd5f18683
+      Path: Events\Default Work Unit\Play_SonidoPuente
+      maxAttenuation: 80
+      maxDuration: -1
+      minDuration: -1
+    - name: UnMuteBombo
+      guid: 9025008c60fb884dbcfa7ed6034032d2
+      id: 996021066
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: UnMuteBombo
+        ObjectType: 3
+        guid: 9025008c60fb884dbcfa7ed6034032d2
+      Path: Events\Default Work Unit\UnMuteBombo
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMuteGuitarra
+      guid: 6c9ab79bbf849246af8799413df2246c
+      id: 1155422426
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: UnMuteGuitarra
+        ObjectType: 3
+        guid: 6c9ab79bbf849246af8799413df2246c
+      Path: Events\Default Work Unit\UnMuteGuitarra
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UnMuteViolin
+      guid: 8b02980a5925d94183085e540182749d
+      id: 3630959244
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: c23469aa82104246ae117460cd35a906
+      - ElementName: UnMuteViolin
+        ObjectType: 3
+        guid: 8b02980a5925d94183085e540182749d
+      Path: Events\Default Work Unit\UnMuteViolin
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -187,7 +374,7 @@ MonoBehaviour:
     m_lastTime: -8584697159883734071
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 05000000060000001300000014000000
+  ExpandedWaapiItemIds: 05000000130000001600000031000000320000003600000037000000390000003a0000004b0000004c000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

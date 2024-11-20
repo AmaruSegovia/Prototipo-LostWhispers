@@ -3,8 +3,15 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Entrada" ID="{F8FBC25E-DC84-4463-BAFF-387BA1B94C4C}" ShortID="846466539">
+				<Sound Name="Oveja" ID="{9FACCEDC-EB7C-49C9-8E12-9AC3B3B411EE}" ShortID="325540827">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Oveja" ID="{40E8978B-88CF-460B-8127-C2995C92C190}" WorkUnitID="{50DC21DE-A90A-4BAC-AC35-E522480B516B}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
 						</Reference>
@@ -13,19 +20,130 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Entrada" ID="{A79FC857-62FD-4606-AA76-9B42382E1898}">
+						<AudioFileSource Name="Oveja" ID="{FE2407B6-8F1B-45E6-BE54-5E437D135E37}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.0327225130890053"/>
+								<Property Name="TrimEnd" Type="Real64" Value="4.03141361256544"/>
+							</PropertyList>
 							<Language>SFX</Language>
-							<AudioFile>Entrada.wav</AudioFile>
+							<AudioFile>Oveja.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="527795062"/>
+								<MediaID ID="501677615"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="Entrada" ID="{A79FC857-62FD-4606-AA76-9B42382E1898}" Platform="Linked"/>
+						<ActiveSource Name="Oveja" ID="{FE2407B6-8F1B-45E6-BE54-5E437D135E37}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Salida" ID="{5F1711F2-C189-438B-91D3-C745D6C83496}" ShortID="920714974">
+				<Sound Name="programacion_radio" ID="{62F8A8CD-D280-4D1F-A747-CFA2DA8FDF75}" ShortID="736570192">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Radio" ID="{ADA7CC14-9297-4B1A-8B3E-62CCB7A9BE7E}" WorkUnitID="{50DC21DE-A90A-4BAC-AC35-E522480B516B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C01D541F-35DB-49FB-A9E6-039714FF3B0F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="programacion_radio" ID="{99D798DF-8BFF-400D-8715-6A41B4D9FE53}">
+							<Language>SFX</Language>
+							<AudioFile>programacion_radio.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="389748634"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="programacion_radio" ID="{99D798DF-8BFF-400D-8715-6A41B4D9FE53}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="señora_habla_cosas" ID="{53BA8104-83F4-444C-95DC-C7F4236E21EC}" ShortID="988899503">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Señora Hablando" ID="{A5D234E8-2341-4B0D-9E87-3CAE33DF571A}" WorkUnitID="{50DC21DE-A90A-4BAC-AC35-E522480B516B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C01D541F-35DB-49FB-A9E6-039714FF3B0F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="señora_habla_cosas" ID="{CDF2A4F6-0152-475B-867A-306919614092}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.546079542975567"/>
+								<Property Name="TrimEnd" Type="Real64" Value="20.7510226330716"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>señora_habla_cosas.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="15661968"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="señora_habla_cosas" ID="{CDF2A4F6-0152-475B-867A-306919614092}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="SonidoPuente" ID="{ECD5CC76-AABC-4C71-8844-FE2A06AEF5CD}" ShortID="927982446">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Puente" ID="{32CB2F82-4945-4FA3-AB5E-1B6F95EB8835}" WorkUnitID="{50DC21DE-A90A-4BAC-AC35-E522480B516B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C01D541F-35DB-49FB-A9E6-039714FF3B0F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="SonidoPuente" ID="{42E697F6-F13D-434B-98E8-61A6F9AE4D41}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="300"/>
+								<Property Name="LoopBegin" Type="Real64" Value="2.18848167539267"/>
+								<Property Name="LoopEnd" Type="Real64" Value="7.47251308900524"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>SonidoPuente.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="473815284"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="SonidoPuente" ID="{42E697F6-F13D-434B-98E8-61A6F9AE4D41}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="SalidaTrigger" ID="{E98D3C77-959F-4E8A-89AA-B3104C84EDBE}" ShortID="518221450">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
@@ -35,16 +153,68 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="Salida" ID="{22448138-CBF4-4FD7-95FD-A9087B06EA39}">
+						<AudioFileSource Name="SalidaTrigger" ID="{8546C529-BA6A-461B-8F40-D3973595364A}">
 							<Language>SFX</Language>
-							<AudioFile>Salida.wav</AudioFile>
+							<AudioFile>SalidaTrigger.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="290995714"/>
+								<MediaID ID="528287850"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="Salida" ID="{22448138-CBF4-4FD7-95FD-A9087B06EA39}" Platform="Linked"/>
+						<ActiveSource Name="SalidaTrigger" ID="{8546C529-BA6A-461B-8F40-D3973595364A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="EntradaTrigger" ID="{C8CBC92E-7A30-43D4-B3BC-B0009ECA9E90}" ShortID="809500336">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C01D541F-35DB-49FB-A9E6-039714FF3B0F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="EntradaTrigger" ID="{5BBD7ACB-97A2-46B7-81C4-EE6D2E2600A6}">
+							<Language>SFX</Language>
+							<AudioFile>EntradaTrigger.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="725485195"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="EntradaTrigger" ID="{5BBD7ACB-97A2-46B7-81C4-EE6D2E2600A6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Ambiente" ID="{8A48DD62-0845-45EF-8768-61BA4F8AFA4A}" ShortID="1046880512">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{58249EF0-2A46-4C32-93FC-B2F6F4E69042}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{C01D541F-35DB-49FB-A9E6-039714FF3B0F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ambiente" ID="{A3F8CD59-F0C5-4EB5-A60E-C65092F33037}">
+							<Language>SFX</Language>
+							<AudioFile>Ambiente.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="740552284"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Ambiente" ID="{A3F8CD59-F0C5-4EB5-A60E-C65092F33037}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

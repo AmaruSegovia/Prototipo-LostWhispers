@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d29bae86d4de7144b22e60a8f1713a3, type: 3}
+  m_Name: 3FC892AB-7D00-4CF7-84D2-D9F79EA30660
+  m_EditorClassIdentifier: 
+  objectName: Play_SalidaTrigger
+  id: 2919192974
+  guid: 3FC892AB-7D00-4CF7-84D2-D9F79EA30660

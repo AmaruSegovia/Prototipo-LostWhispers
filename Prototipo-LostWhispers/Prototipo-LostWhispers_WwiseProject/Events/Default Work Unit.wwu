@@ -3,23 +3,185 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{AA6934C2-1082-4642-AE11-7460CD35A906}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Play_Entrada" ID="{62EF2829-6357-4552-AA3E-12A3B0A60D0D}">
+				<Event Name="Play_EntradaTrigger" ID="{3462D32C-DCD7-47B2-8A04-0C0BA7AA6FC1}">
 					<ChildrenList>
-						<Action Name="" ID="{399E2260-774D-4FC3-9311-3ACE7FB863B7}" ShortID="22515554">
+						<Action Name="" ID="{1A05AB37-BB7B-4B54-ADC4-606450BD2B9F}" ShortID="546346395">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Entrada" ID="{F8FBC25E-DC84-4463-BAFF-387BA1B94C4C}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+									<ObjectRef Name="EntradaTrigger" ID="{C8CBC92E-7A30-43D4-B3BC-B0009ECA9E90}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Salida" ID="{B5AB880B-602B-4DD5-8B5F-057CEF5798BB}">
+				<Event Name="Play_SalidaTrigger" ID="{3FC892AB-7D00-4CF7-84D2-D9F79EA30660}">
 					<ChildrenList>
-						<Action Name="" ID="{A6602FA8-8D9E-4DCF-AA55-C94F6F81CAA3}" ShortID="723925287">
+						<Action Name="" ID="{DA88AE35-81F8-4ABA-9A4C-00B785926871}" ShortID="503987752">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Salida" ID="{5F1711F2-C189-438B-91D3-C745D6C83496}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+									<ObjectRef Name="SalidaTrigger" ID="{E98D3C77-959F-4E8A-89AA-B3104C84EDBE}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Oveja" ID="{A730C948-997A-434D-8B3E-84A81374D9D7}">
+					<ChildrenList>
+						<Action Name="" ID="{08DA919A-0427-46D7-BFC8-A0A71CB24711}" ShortID="96533945">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Oveja" ID="{9FACCEDC-EB7C-49C9-8E12-9AC3B3B411EE}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_programacion_radio" ID="{C5C01740-0B95-4725-B553-0FA98A024D76}">
+					<ChildrenList>
+						<Action Name="" ID="{5DDB2883-4B32-4DA3-A317-DDB57F7A0CF2}" ShortID="1053991708">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="programacion_radio" ID="{62F8A8CD-D280-4D1F-A747-CFA2DA8FDF75}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_se_ora_habla_cosas" ID="{3C048956-31FE-41F4-87DB-CF536140BFC3}">
+					<ChildrenList>
+						<Action Name="" ID="{866794E6-FB6E-4F79-AAC5-AFC6FC8C0764}" ShortID="705624792">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="señora_habla_cosas" ID="{53BA8104-83F4-444C-95DC-C7F4236E21EC}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SonidoPuente" ID="{61D13B4E-3C6C-4B43-B610-E87FD5F18683}">
+					<ChildrenList>
+						<Action Name="" ID="{4350FFDC-88CE-4171-9DE7-8A3ECADEDA4E}" ShortID="667895592">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SonidoPuente" ID="{ECD5CC76-AABC-4C71-8844-FE2A06AEF5CD}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Ambiente" ID="{C4003703-1EEB-425B-99BA-00B133B625D6}">
+					<ChildrenList>
+						<Action Name="" ID="{A5769365-BCDE-4698-9F4A-A12323EFEE88}" ShortID="964366033">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambiente" ID="{8A48DD62-0845-45EF-8768-61BA4F8AFA4A}" WorkUnitID="{FC7BDADC-0A76-483C-A0BC-283781EC8EDE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6D069FB8-EE8F-4FEB-A92E-0AD0AB5A130B}" ShortID="971502271">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mix" ID="{A2018F43-CF87-4607-BBF0-A13425F46269}" WorkUnitID="{F3DCE67D-1B00-45D6-9877-4F546D3D182A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A9642AD1-DC16-45F5-B7AA-DFD808D50BF6}" ShortID="855308815">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="41"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MuteGuitarra" ID="{BCE78064-A643-4E22-BDDE-E1F45773F2E7}" WorkUnitID="{AA6934C2-1082-4642-AE11-7460CD35A906}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MuteGuitarra" ID="{BCE78064-A643-4E22-BDDE-E1F45773F2E7}">
+					<ChildrenList>
+						<Action Name="" ID="{4BDCBD54-56EA-4FF7-8C6D-1D49BD9E8B8D}" ShortID="760540481">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Guitarra" ID="{76A81F1B-4FE2-4302-966D-3C4321BF43DD}" WorkUnitID="{F3DCE67D-1B00-45D6-9877-4F546D3D182A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UnMuteGuitarra" ID="{9BB79A6C-84BF-4692-AF87-99413DF2246C}">
+					<ChildrenList>
+						<Action Name="" ID="{57F4C0DB-EE8D-4A19-99FC-52A1D85C7FD4}" ShortID="148950106">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Guitarra" ID="{76A81F1B-4FE2-4302-966D-3C4321BF43DD}" WorkUnitID="{F3DCE67D-1B00-45D6-9877-4F546D3D182A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MuteBombo" ID="{EE8B794B-E662-474E-B8DC-86AC04E1BFB6}">
+					<ChildrenList>
+						<Action Name="" ID="{84EF14A9-C36F-427D-841C-BEE392D90A2A}" ShortID="271341493">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bombo" ID="{7CADC7F6-1DCD-44C3-9E92-D8ECFBBBA719}" WorkUnitID="{F3DCE67D-1B00-45D6-9877-4F546D3D182A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UnMuteBombo" ID="{8C002590-FB60-4D88-BCFA-7ED6034032D2}">
+					<ChildrenList>
+						<Action Name="" ID="{6B93B80A-D9DC-4D67-A602-EA81ABE2A3B0}" ShortID="300263046">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bombo" ID="{7CADC7F6-1DCD-44C3-9E92-D8ECFBBBA719}" WorkUnitID="{F3DCE67D-1B00-45D6-9877-4F546D3D182A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MuteViolin" ID="{EBDC9B4A-5998-4C73-8D22-F3248C365062}">
+					<ChildrenList>
+						<Action Name="" ID="{2A2C953E-F80B-4897-AA3B-BFC7349CE6C2}" ShortID="454486852">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Violin" ID="{08F48070-6F4D-4814-AC90-4E2AA874E995}" WorkUnitID="{F3DCE67D-1B00-45D6-9877-4F546D3D182A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="UnMuteViolin" ID="{0A98028B-2559-41D9-8308-5E540182749D}">
+					<ChildrenList>
+						<Action Name="" ID="{77925C1C-37F0-4B74-858D-C9B6EADB864F}" ShortID="625535550">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Violin" ID="{08F48070-6F4D-4814-AC90-4E2AA874E995}" WorkUnitID="{F3DCE67D-1B00-45D6-9877-4F546D3D182A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

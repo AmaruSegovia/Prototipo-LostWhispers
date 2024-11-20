@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="Main" ID="{9C7F724D-EE33-4ACF-92E7-74168D00248D}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Interactive Music Hierarchy" ID="{49FED366-B530-42A8-993B-924873AAB707}" WorkUnitID="{49FED366-B530-42A8-993B-924873AAB707}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Default Work Unit" ID="{AA6934C2-1082-4642-AE11-7460CD35A906}" WorkUnitID="{AA6934C2-1082-4642-AE11-7460CD35A906}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

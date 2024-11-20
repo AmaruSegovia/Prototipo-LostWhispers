@@ -22,32 +22,130 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{74778684-D041-52B6-951D-E0468A3D596D}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{065B9B5A-F1D5-4A9A-A8DE-079AC614C806}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
-				<File Id="290995714" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Salida.wav</ShortName>
-					<CachePath>SFX/Salida_818F3B66.wem</CachePath>
+				<File Id="15661968" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>señora_habla_cosas.wav</ShortName>
+					<CachePath>SFX/señora_habla_cosas_F684B7C0.wem</CachePath>
 				</File>
-				<File Id="527795062" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Entrada.wav</ShortName>
-					<CachePath>SFX/Entrada_818F3B66.wem</CachePath>
+				<File Id="125727963" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Violin.wav</ShortName>
+					<CachePath>SFX/Violin_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="151752092" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bombo.wav</ShortName>
+					<CachePath>SFX/Bombo_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="389748634" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>programacion_radio.wav</ShortName>
+					<CachePath>SFX/programacion_radio_818F3B66.wem</CachePath>
+				</File>
+				<File Id="473815284" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SonidoPuente.wav</ShortName>
+					<CachePath>SFX/SonidoPuente_E1C59975.wem</CachePath>
+				</File>
+				<File Id="501677615" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Oveja.wav</ShortName>
+					<CachePath>SFX/Oveja_0F4A4EBF.wem</CachePath>
+				</File>
+				<File Id="528287850" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SalidaTrigger.wav</ShortName>
+					<CachePath>SFX/SalidaTrigger_818F3B66.wem</CachePath>
+				</File>
+				<File Id="561144194" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Guitarra.wav</ShortName>
+					<CachePath>SFX/Guitarra_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="725485195" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EntradaTrigger.wav</ShortName>
+					<CachePath>SFX/EntradaTrigger_818F3B66.wem</CachePath>
+				</File>
+				<File Id="734175869" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Violonchelo.wav</ShortName>
+					<CachePath>SFX/Violonchelo_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="740552284" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ambiente.wav</ShortName>
+					<CachePath>SFX/Ambiente_FBC78EF0.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1285976871" Name="Play_Entrada" DurationType="OneShot" DurationMin="4.841979" DurationMax="4.841979">
+				<Event Id="2902559845" Name="MuteBombo" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
-						<MediaRef Id="527795062"/>
+						<MediaRef Id="151752092"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="4081837998" Name="Play_Salida" DurationType="OneShot" DurationMin="4.9742084" DurationMax="4.9742084">
+				<Event Id="3222823551" Name="MuteGuitarra" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
-						<MediaRef Id="290995714"/>
+						<MediaRef Id="561144194"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3776054341" Name="MuteViolin" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="125727963"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="94063951" Name="Play_Ambiente" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="125727963"/>
+						<MediaRef Id="151752092"/>
+						<MediaRef Id="561144194"/>
+						<MediaRef Id="734175869"/>
+						<MediaRef Id="740552284"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="3222823551" Name="MuteGuitarra"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="3304780337" Name="Play_EntradaTrigger" DurationType="OneShot" DurationMin="2.991625" DurationMax="2.991625">
+					<MediaRefs>
+						<MediaRef Id="725485195"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3173702069" Name="Play_Oveja" MaxAttenuation="40" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="501677615"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3039658800" Name="Play_programacion_radio" MaxAttenuation="15" DurationType="OneShot" DurationMin="107.74438" DurationMax="107.74438">
+					<MediaRefs>
+						<MediaRef Id="389748634"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2919192974" Name="Play_SalidaTrigger" DurationType="OneShot" DurationMin="3.0984375" DurationMax="3.0984375">
+					<MediaRefs>
+						<MediaRef Id="528287850"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3636456090" Name="Play_se_ora_habla_cosas" MaxAttenuation="18" DurationType="OneShot" DurationMin="20.204943" DurationMax="20.204943">
+					<MediaRefs>
+						<MediaRef Id="15661968"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="272922689" Name="Play_SonidoPuente" MaxAttenuation="80" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="473815284"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="996021066" Name="UnMuteBombo" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="151752092"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1155422426" Name="UnMuteGuitarra" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="561144194"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3630959244" Name="UnMuteViolin" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="125727963"/>
 					</MediaRefs>
 				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{15474B66-6118-4823-F9CA-77EC0F3FCD56}</FileHash>
+	<FileHash>{4BE47763-6BE4-9889-3230-DBDD6E00858C}</FileHash>
 </SoundBanksInfo>
