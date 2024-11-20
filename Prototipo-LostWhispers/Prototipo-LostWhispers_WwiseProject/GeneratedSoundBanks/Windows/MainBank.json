@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0D0E8628-F931-4833-A063-C93451BAA95B}",
     "Language": "SFX",
-    "Hash": "{A82AF55E-5E60-02A9-6DDD-973648DFA569}",
+    "Hash": "{4DE8BC94-D23F-AD1E-4315-1D7BEF234603}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
     "ShortName": "MainBank",
     "Path": "MainBank.bnk",
@@ -24,20 +24,36 @@
       "CachePath": "1C/{1CDF31D4-F73B-5454-A31D-F8137BD4FD2A}.wem"
      },
      {
-      "Id": "460601276",
+      "Id": "222230959",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "mixkit-man-coughing-hard-2228.wav",
-      "CachePath": "AE/{AE41DF17-A039-4062-B723-D609CAC8BB72}.wem"
+      "ShortName": "CharcoIn.wav",
+      "CachePath": "EF/{EF0BCD0A-5DC2-742A-D408-1A353DD9CCF2}.wem"
      },
      {
-      "Id": "609593253",
+      "Id": "333127840",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "mixkit-sick-man-coughing-2221.wav",
-      "CachePath": "16/{165CD7CF-3671-A7CB-FF32-DE7C8D20F930}.wem"
+      "ShortName": "Monstruo.wav",
+      "CachePath": "62/{62E87421-29F6-0625-5C91-66BAE9726166}.wem"
+     },
+     {
+      "Id": "412423577",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Radio.wav",
+      "CachePath": "6A/{6A83EED9-B308-6951-9F7B-5C87463AB933}.wem"
+     },
+     {
+      "Id": "448351408",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ovejas.wav",
+      "CachePath": "A1/{A153D394-003B-6A34-BD06-A94DC354E8DF}.wem"
      },
      {
       "Id": "662616917",
@@ -48,20 +64,20 @@
       "CachePath": "6B/{6BFB811F-D608-24B7-85F1-CDE017820B99}.wem"
      },
      {
-      "Id": "816958429",
+      "Id": "700120483",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "mixkit-crow-shor-crowing-316.wav",
-      "CachePath": "E8/{E86DC7E1-8B99-CEED-1637-11DC1FF1AFFD}.wem"
+      "ShortName": "CharcoOut.wav",
+      "CachePath": "F7/{F73FA80B-C55B-4FFF-E429-3ABB93A3BEA2}.wem"
      },
      {
-      "Id": "1014259028",
+      "Id": "713405476",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "mixkit-scary-wooden-door-opening-190.wav",
-      "CachePath": "B0/{B0CA81BB-5690-45EC-BF12-4420AD4A35CF}.wem"
+      "ShortName": "Puerta.wav",
+      "CachePath": "93/{93554558-C10E-631A-71A1-31EE9DE390E3}.wem"
      },
      {
       "Id": "1031939116",
@@ -70,14 +86,6 @@
       "Location": "Memory",
       "ShortName": "Composicion2.wav",
       "CachePath": "E4/{E400AE8D-C8D4-D7AD-04A6-AF11A38A3671}.wem"
-     },
-     {
-      "Id": "1048717375",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "TP2_Ismael Ignacio Miguel Torres.wav",
-      "CachePath": "B9/{B9DB1B5D-4665-9F46-924F-0F9A84F042B9}.wem"
      }
     ],
     "Events": [
@@ -115,16 +123,30 @@
       ]
      },
      {
-      "Id": "3823442842",
-      "Name": "CharcoInOut",
-      "ObjectPath": "\\Events\\Default Work Unit\\CharcoInOut",
+      "Id": "2984164478",
+      "Name": "CharcoIn",
+      "ObjectPath": "\\Events\\Default Work Unit\\CharcoIn",
       "GUID": "{6CF4BF03-F20A-4DAF-B5DC-3E5DFFB3AAD2}",
       "DurationType": "OneShot",
-      "DurationMin": "1.6486775",
-      "DurationMax": "1.6486775",
+      "DurationMin": "2.0602708",
+      "DurationMax": "2.0602708",
       "MediaRefs": [
        {
-        "Id": "609593253"
+        "Id": "222230959"
+       }
+      ]
+     },
+     {
+      "Id": "1790026657",
+      "Name": "CharcoOut",
+      "ObjectPath": "\\Events\\Default Work Unit\\CharcoOut",
+      "GUID": "{F6E6749C-1E13-48A8-8698-3E38ABB14598}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5659168",
+      "DurationMax": "2.5659168",
+      "MediaRefs": [
+       {
+        "Id": "700120483"
        }
       ]
      },
@@ -133,24 +155,24 @@
       "Name": "Monstruo",
       "ObjectPath": "\\Events\\Default Work Unit\\Monstruo",
       "GUID": "{01315C0B-19A0-45A7-8976-B2C1D4229747}",
-      "MaxAttenuation": "12",
+      "MaxAttenuation": "14",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "816958429"
+        "Id": "333127840"
        }
       ]
      },
      {
-      "Id": "2247432076",
-      "Name": "Oveja",
-      "ObjectPath": "\\Events\\Default Work Unit\\Oveja",
+      "Id": "1825837335",
+      "Name": "Ovejas",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ovejas",
       "GUID": "{A8C29C7D-3A80-4201-836C-A01916C2049F}",
-      "MaxAttenuation": "12",
+      "MaxAttenuation": "14",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "460601276"
+        "Id": "448351408"
        }
       ]
      },
@@ -159,11 +181,11 @@
       "Name": "Puerta",
       "ObjectPath": "\\Events\\Default Work Unit\\Puerta",
       "GUID": "{75BF45B6-2590-457B-9D84-B09D075DF27F}",
-      "MaxAttenuation": "12",
+      "MaxAttenuation": "14",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "1014259028"
+        "Id": "713405476"
        }
       ]
      },
@@ -172,17 +194,17 @@
       "Name": "Radio",
       "ObjectPath": "\\Events\\Default Work Unit\\Radio",
       "GUID": "{FF5A663D-9A96-40E4-B113-F0A098F145D5}",
-      "MaxAttenuation": "18",
+      "MaxAttenuation": "28",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "1048717375"
+        "Id": "412423577"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{BE5F8182-1F26-B65C-6905-7951E2446E9F}"
+  "FileHash": "{2C426E3E-7B20-4F0F-B412-5728EFC17944}"
  }
 }

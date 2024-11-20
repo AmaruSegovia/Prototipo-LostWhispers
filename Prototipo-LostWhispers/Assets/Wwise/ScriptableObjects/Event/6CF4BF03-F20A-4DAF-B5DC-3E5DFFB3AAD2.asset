@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d211a929b135b1c46a0d139d55ab564e, type: 3}
   m_Name: 6CF4BF03-F20A-4DAF-B5DC-3E5DFFB3AAD2
   m_EditorClassIdentifier: 
-  objectName: CharcoInOut
-  id: 3823442842
+  objectName: CharcoIn
+  id: 2984164478
   guid: 6CF4BF03-F20A-4DAF-B5DC-3E5DFFB3AAD2
   IsInUserDefinedSoundBank: 1
   IsAutoBankLoaded: 0

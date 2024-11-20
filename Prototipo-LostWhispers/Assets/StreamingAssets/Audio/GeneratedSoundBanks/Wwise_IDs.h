@@ -15,9 +15,10 @@ namespace AK
     {
         static const AkUniqueID ACTIVARVIOLINES = 2508554500U;
         static const AkUniqueID AMBIENTE = 4095160060U;
-        static const AkUniqueID CHARCOINOUT = 3823442842U;
+        static const AkUniqueID CHARCOIN = 2984164478U;
+        static const AkUniqueID CHARCOOUT = 1790026657U;
         static const AkUniqueID MONSTRUO = 3542090678U;
-        static const AkUniqueID OVEJA = 2247432076U;
+        static const AkUniqueID OVEJAS = 1825837335U;
         static const AkUniqueID PUERTA = 3831537568U;
         static const AkUniqueID RADIO = 2548238350U;
     } // namespace EVENTS

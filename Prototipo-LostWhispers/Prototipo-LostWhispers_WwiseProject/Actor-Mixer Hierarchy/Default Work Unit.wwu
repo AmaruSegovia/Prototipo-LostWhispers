@@ -6,6 +6,11 @@
 				<Sound Name="Ambiente" ID="{547806B4-C58B-4E98-8C56-33DD285AE9B5}" ShortID="770585671">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -39,33 +44,53 @@
 						<ActiveSource Name="Ambiente" ID="{F613B7F2-E656-471F-8C56-B3D9033991AA}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="mixkit-crow-shor-crowing-316" ID="{12167B4D-A54B-4C12-BB06-5F35229C087A}" ShortID="955032707">
+				<Sound Name="Ovejas" ID="{109AE640-48E1-4BE0-B447-CAA511ACE397}" ShortID="257798844">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="Highpass" Type="int16">
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Atenuación" ID="{94869527-11F0-4F1D-B518-769951B63CC3}" WorkUnitID="{C83FFAA1-F28B-4F5A-A779-50196065C6F1}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{518A0079-F24E-4C5E-A92F-AF7F9BE36388}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{10030F83-C7B7-422B-A9C5-3A936A851F8B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ovejas" ID="{DD234B8D-13B6-452A-B82D-5FCB14F85F2A}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="404.12205018669"/>
+								<Property Name="LoopBegin" Type="Real64" Value="0.309455930044825"/>
+								<Property Name="LoopEnd" Type="Real64" Value="8.73245980823999"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Ovejas.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="448351408"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Ovejas" ID="{DD234B8D-13B6-452A-B82D-5FCB14F85F2A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Puerta" ID="{9168E227-CA8B-4A62-AD6F-FF3676E576D7}" ShortID="552304308">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Lowpass" Type="int16">
 							<ValueList>
 								<Value>12</Value>
 							</ValueList>
 						</Property>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>71</Value>
-							</ValueList>
-						</Property>
-						<Property Name="MakeUpGain" Type="Real64">
-							<ValueList>
-								<Value>8</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>-1750</Value>
-							</ValueList>
-						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>12</Value>
+								<Value>-6</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -81,190 +106,40 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="mixkit-crow-shor-crowing-316" ID="{6F23CF4B-E334-4857-AB7E-FDA1952C149F}">
+						<AudioFileSource Name="Puerta" ID="{1746E248-5AE5-4EF2-BB3F-D81E4AC5F281}">
 							<PropertyList>
-								<Property Name="CrossfadeShape" Type="int16" Value="9"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.000778707393741251"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>mixkit-crow-shor-crowing-316.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="816958429"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="mixkit-crow-shor-crowing-316" ID="{6F23CF4B-E334-4857-AB7E-FDA1952C149F}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="mixkit-man-coughing-hard-2228" ID="{EAE352EC-880B-4D26-A13E-21696EE2AB41}" ShortID="340159354">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="Highpass" Type="int16">
-							<ValueList>
-								<Value>59</Value>
-							</ValueList>
-						</Property>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>15</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>570</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-5</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Atenuación" ID="{94869527-11F0-4F1D-B518-769951B63CC3}" WorkUnitID="{C83FFAA1-F28B-4F5A-A779-50196065C6F1}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{518A0079-F24E-4C5E-A92F-AF7F9BE36388}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{10030F83-C7B7-422B-A9C5-3A936A851F8B}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="mixkit-man-coughing-hard-2228" ID="{BD27B008-2ABA-4BB0-BCB1-1C74B6943B2E}">
-							<Language>SFX</Language>
-							<AudioFile>mixkit-man-coughing-hard-2228.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="460601276"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="mixkit-man-coughing-hard-2228" ID="{BD27B008-2ABA-4BB0-BCB1-1C74B6943B2E}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="mixkit-scary-wooden-door-opening-190" ID="{8A227A28-07AF-4AE3-A45B-C65760BD68F6}" ShortID="488242237">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>33</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>1050</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-15</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Atenuación" ID="{94869527-11F0-4F1D-B518-769951B63CC3}" WorkUnitID="{C83FFAA1-F28B-4F5A-A779-50196065C6F1}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{518A0079-F24E-4C5E-A92F-AF7F9BE36388}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{10030F83-C7B7-422B-A9C5-3A936A851F8B}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="mixkit-scary-wooden-door-opening-190" ID="{9543D7EE-3561-4DA3-BC46-D9AA2183DB3D}">
-							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="192.341"/>
+								<Property Name="LoopBegin" Type="Real64" Value="0.240980235781249"/>
+								<Property Name="LoopEnd" Type="Real64" Value="1.81730038369935"/>
 								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 							</PropertyList>
 							<Language>SFX</Language>
-							<AudioFile>mixkit-scary-wooden-door-opening-190.wav</AudioFile>
+							<AudioFile>Puerta.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="1014259028"/>
+								<MediaID ID="713405476"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="mixkit-scary-wooden-door-opening-190" ID="{9543D7EE-3561-4DA3-BC46-D9AA2183DB3D}" Platform="Linked"/>
+						<ActiveSource Name="Puerta" ID="{1746E248-5AE5-4EF2-BB3F-D81E4AC5F281}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="mixkit-sick-man-coughing-2221" ID="{3B28EA0D-3ED7-4088-A3D9-2B5A5915F0DF}" ShortID="796469282">
-					<PropertyList>
-						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>23</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>-490</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-8</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{518A0079-F24E-4C5E-A92F-AF7F9BE36388}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{10030F83-C7B7-422B-A9C5-3A936A851F8B}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="mixkit-sick-man-coughing-2221" ID="{630C6D19-D225-4482-AAD7-BD19D4A45E6A}">
-							<Language>SFX</Language>
-							<AudioFile>mixkit-sick-man-coughing-2221.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="609593253"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="mixkit-sick-man-coughing-2221" ID="{630C6D19-D225-4482-AAD7-BD19D4A45E6A}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="TP2_Ismael Ignacio Miguel Torres" ID="{41EF259D-059B-4FE8-8049-36FFFB029CF6}" ShortID="883035917">
+				<Sound Name="Radio" ID="{F3849568-1019-45D5-8CA1-543FA0078C31}" ShortID="589676872">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="Highpass" Type="int16">
-							<ValueList>
-								<Value>40</Value>
-							</ValueList>
-						</Property>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="MakeUpGain" Type="Real64">
-							<ValueList>
-								<Value>-2</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-7</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
 							<Custom>
-								<Attenuation Name="Radio" ID="{BC7CA3CD-4CF3-4E7F-91CD-38C6A8F2E2CC}" ShortID="767290151">
+								<Attenuation Name="AtenRadio" ID="{2DE2318C-A514-4600-93EF-20BCEE513E32}" ShortID="995175323">
 									<PropertyList>
-										<Property Name="RadiusMax" Type="Real64" Value="18"/>
+										<Property Name="RadiusMax" Type="Real64" Value="28"/>
 									</PropertyList>
 									<CurveUsageInfoList>
 										<VolumeDryUsage>
 											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-												<Curve Name="VolumeDry" ID="{B1AE5ACF-A499-45DB-B9DE-B687C58BB9A5}">
+												<Curve Name="VolumeDry" ID="{AE2661B4-A75F-426A-85D8-46D961C58F54}">
 													<PropertyList>
 														<Property Name="Flags" Type="int32" Value="3"/>
 													</PropertyList>
@@ -276,13 +151,13 @@
 															<SegmentShape>Log3</SegmentShape>
 														</Point>
 														<Point>
-															<XPos>9.648405</XPos>
-															<YPos>-17.61626</YPos>
+															<XPos>15.0461111111111</XPos>
+															<YPos>-17.6969</YPos>
 															<Flags>0</Flags>
 															<SegmentShape>Exp3</SegmentShape>
 														</Point>
 														<Point>
-															<XPos>18</XPos>
+															<XPos>28</XPos>
 															<YPos>-200</YPos>
 															<Flags>37</Flags>
 														</Point>
@@ -301,7 +176,7 @@
 										</LowPassFilterUsage>
 										<HighPassFilterUsage>
 											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-												<Curve Name="HighPassFilter" ID="{DC26506A-0110-4981-A823-C383544D3FD7}">
+												<Curve Name="HighPassFilter" ID="{7888399F-0CA4-46CC-A032-23FD017F868E}">
 													<PropertyList>
 														<Property Name="Flags" Type="int32" Value="65537"/>
 													</PropertyList>
@@ -313,13 +188,13 @@
 															<SegmentShape>Log2</SegmentShape>
 														</Point>
 														<Point>
-															<XPos>2.39437</XPos>
+															<XPos>3.76839555555556</XPos>
 															<YPos>55</YPos>
 															<Flags>0</Flags>
 															<SegmentShape>Log2</SegmentShape>
 														</Point>
 														<Point>
-															<XPos>18</XPos>
+															<XPos>28</XPos>
 															<YPos>100</YPos>
 															<Flags>37</Flags>
 														</Point>
@@ -381,16 +256,100 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<AudioFileSource Name="TP2_Ismael Ignacio Miguel Torres" ID="{07326C41-F98B-416F-850E-33E299CE365B}">
+						<AudioFileSource Name="Radio" ID="{1D183D5D-D502-4017-A77A-E7A31B5884D1}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="1.43534482758621"/>
+								<Property Name="LoopBegin" Type="Real64" Value="1.11637931034483"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
 							<Language>SFX</Language>
-							<AudioFile>TP2_Ismael Ignacio Miguel Torres.wav</AudioFile>
+							<AudioFile>Radio.wav</AudioFile>
 							<MediaIDList>
-								<MediaID ID="1048717375"/>
+								<MediaID ID="412423577"/>
 							</MediaIDList>
 						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="TP2_Ismael Ignacio Miguel Torres" ID="{07326C41-F98B-416F-850E-33E299CE365B}" Platform="Linked"/>
+						<ActiveSource Name="Radio" ID="{1D183D5D-D502-4017-A77A-E7A31B5884D1}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Monstruo" ID="{5FB1390C-11D1-4A83-9FDB-1B82F4822BB1}" ShortID="482001824">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Atenuación" ID="{94869527-11F0-4F1D-B518-769951B63CC3}" WorkUnitID="{C83FFAA1-F28B-4F5A-A779-50196065C6F1}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{518A0079-F24E-4C5E-A92F-AF7F9BE36388}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{10030F83-C7B7-422B-A9C5-3A936A851F8B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Monstruo" ID="{9089BDB2-5253-4ADE-9285-78D6A9D8B41F}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="1167.321"/>
+								<Property Name="LoopBegin" Type="Real64" Value="0.798850589328342"/>
+								<Property Name="LoopEnd" Type="Real64" Value="6.95798848046197"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Monstruo.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="333127840"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Monstruo" ID="{9089BDB2-5253-4ADE-9285-78D6A9D8B41F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="CharcoIn" ID="{F2BFED01-D070-4BC5-9139-3E8AA6379E62}" ShortID="908804305">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{518A0079-F24E-4C5E-A92F-AF7F9BE36388}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{10030F83-C7B7-422B-A9C5-3A936A851F8B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="CharcoIn" ID="{B0046234-9041-4E73-B5F4-4F03FF75DEC7}">
+							<Language>SFX</Language>
+							<AudioFile>CharcoIn.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="222230959"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="CharcoIn" ID="{B0046234-9041-4E73-B5F4-4F03FF75DEC7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="CharcoOut" ID="{A6155F45-3738-42A0-8D71-AF7A111808C0}" ShortID="743473256">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{518A0079-F24E-4C5E-A92F-AF7F9BE36388}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{10030F83-C7B7-422B-A9C5-3A936A851F8B}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="CharcoOut" ID="{01A85D86-841D-4BB2-8BB5-9B01C1C0909A}">
+							<Language>SFX</Language>
+							<AudioFile>CharcoOut.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="700120483"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="CharcoOut" ID="{01A85D86-841D-4BB2-8BB5-9B01C1C0909A}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

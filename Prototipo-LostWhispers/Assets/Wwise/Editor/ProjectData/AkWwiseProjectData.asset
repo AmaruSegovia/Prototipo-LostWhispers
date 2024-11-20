@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: bfb90fa124a27a4ab688c609896cc332
     GuidInternal: 
-    m_lastTime: -8584696285761759238
+    m_lastTime: -8584695251704892174
     List:
     - name: MainBank
       guid: 28860e0d31f93348a063c93451baa95b
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 7f5a71bb60fa894bac401a5743ea4a85
     GuidInternal: 
-    m_lastTime: -8584696199458671340
+    m_lastTime: -8584695251705411943
     List:
     - name: ActivarViolines
       guid: beda1ff591cd3a418706727f5e0387cc
@@ -130,9 +130,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: CharcoInOut
+    - name: CharcoIn
       guid: 03bff46c0af2af4db5dc3e5dffb3aad2
-      id: 3823442842
+      id: 2984164478
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -140,13 +140,30 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 7f5a71bb60fa894bac401a5743ea4a85
-      - ElementName: CharcoInOut
+      - ElementName: CharcoIn
         ObjectType: 3
         guid: 03bff46c0af2af4db5dc3e5dffb3aad2
-      Path: Events\Default Work Unit\CharcoInOut
+      Path: Events\Default Work Unit\CharcoIn
       maxAttenuation: 0
-      maxDuration: 1.6486775
-      minDuration: 1.6486775
+      maxDuration: 2.0602708
+      minDuration: 2.0602708
+    - name: CharcoOut
+      guid: 9c74e6f6131ea84886983e38abb14598
+      id: 1790026657
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7f5a71bb60fa894bac401a5743ea4a85
+      - ElementName: CharcoOut
+        ObjectType: 3
+        guid: 9c74e6f6131ea84886983e38abb14598
+      Path: Events\Default Work Unit\CharcoOut
+      maxAttenuation: 0
+      maxDuration: 2.5659168
+      minDuration: 2.5659168
     - name: Monstruo
       guid: 0b5c3101a019a7458976b2c1d4229747
       id: 3542090678
@@ -161,12 +178,12 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0b5c3101a019a7458976b2c1d4229747
       Path: Events\Default Work Unit\Monstruo
-      maxAttenuation: 12
+      maxAttenuation: 14
       maxDuration: 0
       minDuration: 0
-    - name: Oveja
+    - name: Ovejas
       guid: 7d9cc2a8803a0142836ca01916c2049f
-      id: 2247432076
+      id: 1825837335
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -174,11 +191,11 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 7f5a71bb60fa894bac401a5743ea4a85
-      - ElementName: Oveja
+      - ElementName: Ovejas
         ObjectType: 3
         guid: 7d9cc2a8803a0142836ca01916c2049f
-      Path: Events\Default Work Unit\Oveja
-      maxAttenuation: 12
+      Path: Events\Default Work Unit\Ovejas
+      maxAttenuation: 14
       maxDuration: 0
       minDuration: 0
     - name: Puerta
@@ -195,7 +212,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: b645bf7590257b459d84b09d075df27f
       Path: Events\Default Work Unit\Puerta
-      maxAttenuation: 12
+      maxAttenuation: 14
       maxDuration: 0
       minDuration: 0
     - name: Radio
@@ -212,7 +229,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 3d665aff969ae440b113f0a098f145d5
       Path: Events\Default Work Unit\Radio
-      maxAttenuation: 18
+      maxAttenuation: 28
       maxDuration: 0
       minDuration: 0
   RtpcWwu:

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d211a929b135b1c46a0d139d55ab564e, type: 3}
   m_Name: A8C29C7D-3A80-4201-836C-A01916C2049F
   m_EditorClassIdentifier: 
-  objectName: Oveja
-  id: 2247432076
+  objectName: Ovejas
+  id: 1825837335
   guid: A8C29C7D-3A80-4201-836C-A01916C2049F
   IsInUserDefinedSoundBank: 1
   IsAutoBankLoaded: 0

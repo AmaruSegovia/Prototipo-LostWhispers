@@ -37,18 +37,18 @@
 						<Action Name="" ID="{BBA1C2BB-6432-4227-80E6-C310310E9894}" ShortID="413910243">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="mixkit-scary-wooden-door-opening-190" ID="{8A227A28-07AF-4AE3-A45B-C65760BD68F6}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
+									<ObjectRef Name="Puerta" ID="{9168E227-CA8B-4A62-AD6F-FF3676E576D7}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Oveja" ID="{A8C29C7D-3A80-4201-836C-A01916C2049F}">
+				<Event Name="Ovejas" ID="{A8C29C7D-3A80-4201-836C-A01916C2049F}">
 					<ChildrenList>
 						<Action Name="" ID="{93764638-DD8D-4CD3-B5A1-1675C8A7874B}" ShortID="609331745">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="mixkit-man-coughing-hard-2228" ID="{EAE352EC-880B-4D26-A13E-21696EE2AB41}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
+									<ObjectRef Name="Ovejas" ID="{109AE640-48E1-4BE0-B447-CAA511ACE397}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -59,7 +59,7 @@
 						<Action Name="" ID="{D20A1B07-C504-44CA-89C5-58F3CDF466F8}" ShortID="149688240">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="mixkit-crow-shor-crowing-316" ID="{12167B4D-A54B-4C12-BB06-5F35229C087A}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
+									<ObjectRef Name="Monstruo" ID="{5FB1390C-11D1-4A83-9FDB-1B82F4822BB1}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -70,18 +70,18 @@
 						<Action Name="" ID="{3E19AE20-EC9B-405A-ADF5-2A4196DB3212}" ShortID="899400224">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="TP2_Ismael Ignacio Miguel Torres" ID="{41EF259D-059B-4FE8-8049-36FFFB029CF6}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
+									<ObjectRef Name="Radio" ID="{F3849568-1019-45D5-8CA1-543FA0078C31}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="CharcoInOut" ID="{6CF4BF03-F20A-4DAF-B5DC-3E5DFFB3AAD2}">
+				<Event Name="CharcoIn" ID="{6CF4BF03-F20A-4DAF-B5DC-3E5DFFB3AAD2}">
 					<ChildrenList>
 						<Action Name="" ID="{EF02AB98-C01F-4198-908E-07CCAECA507B}" ShortID="422617176">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="mixkit-sick-man-coughing-2221" ID="{3B28EA0D-3ED7-4088-A3D9-2B5A5915F0DF}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
+									<ObjectRef Name="CharcoIn" ID="{F2BFED01-D070-4BC5-9139-3E8AA6379E62}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -92,12 +92,24 @@
 						<Action Name="" ID="{9D36C83F-E9BC-4F04-A001-A24258BA00FA}" ShortID="539990783">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="5"/>
-								<Property Name="FadeInCurve" Type="int16" Value="1"/>
+								<Property Name="FadeInCurve" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Composicion2" ID="{251D5B0C-592E-4405-A993-DDC382CA30A6}" WorkUnitID="{533ADBBD-4FE6-4A44-BF44-8ECD10A5FD89}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="CharcoOut" ID="{F6E6749C-1E13-48A8-8698-3E38ABB14598}">
+					<ChildrenList>
+						<Action Name="" ID="{650036A6-AE2D-4DD2-A081-0CF1CE135070}" ShortID="260804872">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CharcoOut" ID="{A6155F45-3738-42A0-8D71-AF7A111808C0}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

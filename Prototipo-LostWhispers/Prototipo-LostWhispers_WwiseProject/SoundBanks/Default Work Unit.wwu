@@ -5,13 +5,14 @@
 			<ChildrenList>
 				<SoundBank Name="MainBank" ID="{0D0E8628-F931-4833-A063-C93451BAA95B}">
 					<ObjectInclusionList>
-						<ObjectRef Name="mixkit-sick-man-coughing-2221" ID="{3B28EA0D-3ED7-4088-A3D9-2B5A5915F0DF}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Playlist" ID="{D150A7E5-E68A-41B2-AA5C-CD1DB6521F1F}" WorkUnitID="{533ADBBD-4FE6-4A44-BF44-8ECD10A5FD89}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="mixkit-scary-wooden-door-opening-190" ID="{8A227A28-07AF-4AE3-A45B-C65760BD68F6}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="mixkit-crow-shor-crowing-316" ID="{12167B4D-A54B-4C12-BB06-5F35229C087A}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="mixkit-man-coughing-hard-2228" ID="{EAE352EC-880B-4D26-A13E-21696EE2AB41}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="CharcoOut" ID="{A6155F45-3738-42A0-8D71-AF7A111808C0}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Radio" ID="{F3849568-1019-45D5-8CA1-543FA0078C31}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Puerta" ID="{9168E227-CA8B-4A62-AD6F-FF3676E576D7}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Monstruo" ID="{5FB1390C-11D1-4A83-9FDB-1B82F4822BB1}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="CharcoIn" ID="{F2BFED01-D070-4BC5-9139-3E8AA6379E62}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Ovejas" ID="{109AE640-48E1-4BE0-B447-CAA511ACE397}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Ambiente" ID="{547806B4-C58B-4E98-8C56-33DD285AE9B5}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="TP2_Ismael Ignacio Miguel Torres" ID="{41EF259D-059B-4FE8-8049-36FFFB029CF6}" WorkUnitID="{A52D6FAC-D6F2-4922-B23F-8F4F68812C83}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
