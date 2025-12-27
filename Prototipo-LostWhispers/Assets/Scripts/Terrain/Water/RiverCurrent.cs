@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class RiverCurrent : MonoBehaviour
 {
-    public Vector3 baseFlowDirection = new Vector3(1, 0, 0); // Dirección base del flujo del río
-    public float baseFlowSpeed = 1.0f; // Velocidad base del flujo del río
+    public Vector3 baseFlowDirection = new Vector3(1, 0, 0); // Direcciï¿½n base del flujo del rï¿½o
+    public float baseFlowSpeed = 1.0f; // Velocidad base del flujo del rï¿½o
     public float turbulenceStrength = 0.5f; // Fuerza de la turbulencia
     public float turbulenceFrequency = 1.0f; // Frecuencia de la turbulencia
-    public float floatHeight = 1.0f; // Altura a la que el objeto debería flotar
-    public float floatStrength = 10.0f; // Fuerza de flotación
+    public float floatHeight = 1.0f; // Altura a la que el objeto deberï¿½a flotar
+    public float floatStrength = 10.0f; // Fuerza de flotaciï¿½n
 
     void OnTriggerStay(Collider other)
     {
@@ -21,18 +21,18 @@ public class RiverCurrent : MonoBehaviour
                 Mathf.PerlinNoise(0, Time.time * turbulenceFrequency) - 0.5f
             ) * turbulenceStrength;
 
-            // Dirección del flujo del río con turbulencia
+            // Direcciï¿½n del flujo del rï¿½o con turbulencia
             Vector3 flowDirection = baseFlowDirection + turbulence;
 
-            // Aplicar la fuerza del flujo del río
+            // Aplicar la fuerza del flujo del rï¿½o
             rb.AddForce(flowDirection * baseFlowSpeed);
 
-            // Calcular la fuerza de flotación
+            // Calcular la fuerza de flotaciï¿½n
             float waterSurfaceY = transform.position.y + floatHeight;
             float forceFactor = 1.0f - ((other.transform.position.y - waterSurfaceY) / floatHeight);
             if (forceFactor > 0)
             {
-                Vector3 floatForce = -Physics.gravity * rb.mass * (forceFactor - rb.velocity.y * 0.5f);
+                Vector3 floatForce = -Physics.gravity * rb.mass * (forceFactor - rb.linearVelocity.y * 0.5f);
                 rb.AddForceAtPosition(floatForce, other.transform.position);
             }
         }

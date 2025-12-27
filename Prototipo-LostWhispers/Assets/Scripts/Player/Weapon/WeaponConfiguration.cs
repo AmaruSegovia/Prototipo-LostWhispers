@@ -1,10 +1,5 @@
 using UnityEngine;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine.UI;
-using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 using Random = UnityEngine.Random;
 using EZCameraShake;
@@ -123,17 +118,16 @@ public class WeaponConfiguration : MonoBehaviour
         Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
 
         //RayCast
-        //Debug.DrawRay(fpsCam.transform.position, direction * 1300f, Color.red);
+        Debug.DrawRay(fpsCam.transform.position, direction * 1300f, Color.red);
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range, whatIsEnemy))
         {
-            Debug.Log(rayHit.collider.name);
-            //Usar este if para el Todos los tipos de enemigos
-            /*if (rayHit.collider.CompareTag("Enemy"))
+            /*IDamageable damageable = rayHit.collider.GetComponent<IDamageable>();
+
+            if (damageable != null)
             {
-                rayHit.collider.GetComponent<ShootingAI>().TakeDamage(damage);
+                damageable.takeDamage(damage);
             }*/
         }
-
         /*CAMERA SHAKE*/
         CameraShaker.Instance.ShakeOnce(camShakerMagnitude, roughness, fadeInTime, fadeOutTime);
 
