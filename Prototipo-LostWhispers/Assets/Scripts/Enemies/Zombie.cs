@@ -3,12 +3,8 @@
 public class Zombie : Enemy
 {
     [SerializeField] float walkRadius = 10f;
-
     [SerializeField] Vector2 patrolIdleTimeRange = new Vector2(5f, 8f);
-
-    [SerializeField, Range(0f, 1f)]
-    float idleChance = 0.4f;
-
+    [SerializeField, Range(0f, 1f)] float idleChance = 0.4f;
     [SerializeField] float viewDistance = 12f;
 
     float idleTimer;
@@ -24,34 +20,35 @@ public class Zombie : Enemy
             case EnemyStatus.Patrol:
                 StatePatrol();
                 break;
-
             case EnemyStatus.Idle:
                 StateIdle();
                 break;
-
             case EnemyStatus.Chase:
                 StateChase();
                 break;
-
             case EnemyStatus.Dead:
                 Died();
                 break;
         }
     }
+
     void StatePatrol()
     {
         animator.SetBool("isWalk?", true);
         animator.SetBool("isRun?", false);
 
         agent.isStopped = false;
+
         if (!agent.hasPath && !waitingAtPoint)
         {
             Vector3 randomPos = RandomNavMeshLocation(walkRadius);
             agent.SetDestination(randomPos);
         }
+
         if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             agent.ResetPath();
+
             if (Random.value <= idleChance)
             {
                 waitingAtPoint = true;
@@ -89,6 +86,7 @@ public class Zombie : Enemy
         animator.SetBool("isWalk?", false);
         animator.SetBool("isRun?", true);
     }
+
     void DetectPlayer()
     {
         float distance = Vector3.Distance(transform.position, target.position);
@@ -103,6 +101,7 @@ public class Zombie : Enemy
             ChangeState(EnemyStatus.Patrol);
         }
     }
+
     void PickNewIdleTime()
     {
         currentIdleTime = Random.Range(patrolIdleTimeRange.x, patrolIdleTimeRange.y);

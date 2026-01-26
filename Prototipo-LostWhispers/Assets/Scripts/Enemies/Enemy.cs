@@ -1,13 +1,10 @@
-using TreeEditor;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Rendering;
-using UnityEngine.XR;
 
 public abstract class Enemy : MonoBehaviour
 {
     protected EnemyStatus currentStatus;
-    protected float maxHealth;
+    protected float maxHealth = 100f;
     protected float currentHealth;
 
     protected NavMeshAgent agent;
@@ -22,16 +19,20 @@ public abstract class Enemy : MonoBehaviour
         currentHealth = maxHealth;
         ChangeState(EnemyStatus.Idle);
     }
+
     protected virtual void Update()
     {
         StateMachine();
     }
+
     protected abstract void StateMachine();
-    protected virtual void ChangeState(EnemyStatus newStatus) 
+
+    protected virtual void ChangeState(EnemyStatus newStatus)
     {
         currentStatus = newStatus;
     }
-    public virtual void TakeDamage(float damage) 
+
+    public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
@@ -39,14 +40,15 @@ public abstract class Enemy : MonoBehaviour
             ChangeState(EnemyStatus.Dead);
         }
     }
-    protected virtual void Died() 
+
+    protected virtual void Died()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
-    protected Vector3 RandomNavMeshLocation(float radius) 
+
+    protected Vector3 RandomNavMeshLocation(float radius)
     {
-        Vector3 randomDirection = Random.insideUnitSphere * radius;
-        randomDirection += transform.position;
+        Vector3 randomDirection = Random.insideUnitSphere * radius + transform.position;
         NavMeshHit hit;
         NavMesh.SamplePosition(randomDirection, out hit, radius, NavMesh.AllAreas);
         return hit.position;
